@@ -22,7 +22,7 @@ function point_convert(_num){
 
 function point_add(_num){
 	points += _num
-	disp_pts = point_convert(points)
+	if points > 0 disp_pts = point_convert(points)
 }
 
 function draw_card(_num){
@@ -52,4 +52,137 @@ function draw_card(_num){
 	}
 	
 	
+}
+
+function check_card(){
+	var _status = array_create(6,0)
+	with obj_parcard{
+		_status[val] += 1
+	}
+	
+	if _status[5] == 1 {
+		with obj_parcard if val == 0 or val == 5 selected = true
+		with obj_deck clear_cards(0)
+		return true;
+	}
+	
+	else if _status[2] >= 1 and _status[3] >= 1{ 
+		var _twocheck = 1
+		var _threecheck = 1
+		
+		with obj_parcard {
+			if val == 0 selected = true
+			else if val == 2 and _twocheck > 0 {
+				selected = true;
+				_twocheck -= 1
+			}
+				
+			else if val == 3 and _threecheck > 0{
+				selected = true
+				_threecheck -= 1
+			}
+		}	
+		with obj_deck clear_cards(0)
+		return true;			
+	}
+	
+	
+	else if _status[1] >= 1 and _status[4] >= 1 {
+		var _onecheck = 1
+		var _fourcheck = 1
+		
+		with obj_parcard {
+			if val == 0 selected = true
+			else if val == 4 and _fourcheck > 0 {
+				selected = true;
+				_fourcheck -= 1
+			}
+				
+			else if val == 1 and _onecheck > 0{
+				selected = true
+				_onecheck -= 1
+			}		
+		}	
+		with obj_deck clear_cards(0)
+		return true;
+	}
+	
+	
+	else if _status[1] >= 2 and _status[3] >= 1 {
+		var _onecheck = 2
+		var _threecheck = 1
+		
+		with obj_parcard {
+			if val == 0 selected = true
+			else if val == 3 and _threecheck > 0 {
+				selected = true;
+				_threecheck -= 1
+			}
+				
+			else if val == 1 and _onecheck > 0{
+				selected = true
+				_onecheck -= 1
+			}		
+		}	
+		with obj_deck clear_cards(0)
+		return true;
+	}	
+	
+	
+	else if _status[1] >= 3 and _status[2] >= 1 {
+		var _onecheck = 3
+		var _twocheck = 1
+		
+		with obj_parcard {
+			if val == 0 selected = true
+			else if val == 2 and _twocheck > 0 {
+				selected = true;
+				_twocheck -= 1
+			}
+				
+			else if val == 1 and _onecheck > 0{
+				selected = true
+				_onecheck -= 1
+			}		
+		}	
+		with obj_deck clear_cards(0)
+		return true;
+	}		
+	
+	else if _status[1] >= 1 and _status[2] >= 2 {
+		var _onecheck = 1
+		var _twocheck = 2
+		
+		with obj_parcard {
+			if val == 0 selected = true
+			else if val == 2 and _twocheck > 0 {
+				selected = true;
+				_twocheck -= 1
+			}
+				
+			else if val == 1 and _onecheck > 0{
+				selected = true
+				_onecheck -= 1
+			}		
+		}	
+		with obj_deck clear_cards(0)
+		return true;
+	}		
+	
+	
+	else return false;
+	
+}
+
+//clears the cards. Must be called with obj_deck
+function clear_cards(pts){
+	var _unselect = []
+	point_add(pts);
+	num_selected = 0
+	val_selected = 0
+	with (obj_parcard) {
+		if !selected array_push(_unselect,val)
+		instance_destroy(self)
+	}
+	while array_length(_unselect) > 0 draw_card(array_pop(_unselect))
 }
