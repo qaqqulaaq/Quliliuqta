@@ -18,3 +18,5 @@ disp_deck = point_convert(array_length(deck_list))
 
 num_selected = 0
 val_selected = 0
+
+winscale = 2

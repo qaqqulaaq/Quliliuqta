@@ -36,6 +36,7 @@
   "name":"Quliliuqta",
   "resources":[
     {"id":{"name":"fnt_genkak","path":"fonts/fnt_genkak/fnt_genkak.yy",},},
+    {"id":{"name":"fnt_genkakx2","path":"fonts/fnt_genkakx2/fnt_genkakx2.yy",},},
     {"id":{"name":"obj_0suitchuq","path":"objects/obj_0suitchuq/obj_0suitchuq.yy",},},
     {"id":{"name":"obj_1atausiq","path":"objects/obj_1atausiq/obj_1atausiq.yy",},},
     {"id":{"name":"obj_2malguk","path":"objects/obj_2malguk/obj_2malguk.yy",},},
