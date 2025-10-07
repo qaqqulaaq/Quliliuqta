@@ -1,5 +1,30 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+
+function deck_shuffle(){
+
+	with obj_parcard instance_destroy()
+
+	num_selected = 0
+	val_selected = 0
+
+	deck_list = []
+
+	for (var _i = 0; _i < 6; _i++){
+		
+		array_push(deck_list,0,1,1,2,2,3,3,4,4,5)
+		
+		//array_push(deck_list,0,0,1,1,1,1,2,2,2,3,3,3)
+		//array_push(deck_list,0,0,0,2,2,2,2,3,3,3,3)
+		//array_push(deck_list,1,1,1,1,1,0,0,0,0)
+	}
+
+	deck_list = array_shuffle(deck_list);
+	
+}
+
+
 function point_convert(_num){
 	var _set = 0;
 	
@@ -54,128 +79,9 @@ function draw_card(_num){
 	
 }
 
-function check_card(){
-	var _status = array_create(6,0)
-	with obj_parcard{
-		_status[val] += 1
-	}
-	
-	if _status[5] == 1 {
-		with obj_parcard if val == 0 or val == 5 selected = true
-		with obj_deck clear_cards(0)
-		return true;
-	}
-	
-	else if _status[2] >= 1 and _status[3] >= 1{ 
-		var _twocheck = 1
-		var _threecheck = 1
-		
-		with obj_parcard {
-			if val == 0 selected = true
-			else if val == 2 and _twocheck > 0 {
-				selected = true;
-				_twocheck -= 1
-			}
-				
-			else if val == 3 and _threecheck > 0{
-				selected = true
-				_threecheck -= 1
-			}
-		}	
-		with obj_deck clear_cards(0)
-		return true;			
-	}
-	
-	
-	else if _status[1] >= 1 and _status[4] >= 1 {
-		var _onecheck = 1
-		var _fourcheck = 1
-		
-		with obj_parcard {
-			if val == 0 selected = true
-			else if val == 4 and _fourcheck > 0 {
-				selected = true;
-				_fourcheck -= 1
-			}
-				
-			else if val == 1 and _onecheck > 0{
-				selected = true
-				_onecheck -= 1
-			}		
-		}	
-		with obj_deck clear_cards(0)
-		return true;
-	}
-	
-	
-	else if _status[1] >= 2 and _status[3] >= 1 {
-		var _onecheck = 2
-		var _threecheck = 1
-		
-		with obj_parcard {
-			if val == 0 selected = true
-			else if val == 3 and _threecheck > 0 {
-				selected = true;
-				_threecheck -= 1
-			}
-				
-			else if val == 1 and _onecheck > 0{
-				selected = true
-				_onecheck -= 1
-			}		
-		}	
-		with obj_deck clear_cards(0)
-		return true;
-	}	
-	
-	
-	else if _status[1] >= 3 and _status[2] >= 1 {
-		var _onecheck = 3
-		var _twocheck = 1
-		
-		with obj_parcard {
-			if val == 0 selected = true
-			else if val == 2 and _twocheck > 0 {
-				selected = true;
-				_twocheck -= 1
-			}
-				
-			else if val == 1 and _onecheck > 0{
-				selected = true
-				_onecheck -= 1
-			}		
-		}	
-		with obj_deck clear_cards(0)
-		return true;
-	}		
-	
-	else if _status[1] >= 1 and _status[2] >= 2 {
-		var _onecheck = 1
-		var _twocheck = 2
-		
-		with obj_parcard {
-			if val == 0 selected = true
-			else if val == 2 and _twocheck > 0 {
-				selected = true;
-				_twocheck -= 1
-			}
-				
-			else if val == 1 and _onecheck > 0{
-				selected = true
-				_onecheck -= 1
-			}		
-		}	
-		with obj_deck clear_cards(0)
-		return true;
-	}		
-	
-	
-	else return false;
-	
-}
-
 //clears the cards. Must be called with obj_deck
 function clear_cards(pts){
+	fail_counter = 0;
 	var _unselect = []
 	point_add(pts);
 	num_selected = 0
@@ -185,4 +91,25 @@ function clear_cards(pts){
 		instance_destroy(self)
 	}
 	while array_length(_unselect) > 0 draw_card(array_pop(_unselect))
+}
+
+function comp_select(_array){
+	var _timeadj = 0;
+	
+	with obj_00suitchuq{
+		alarm[0] = 5 + _timeadj*game_get_speed(gamespeed_fps) div 2
+		_timeadj += 1;
+	}
+	
+	for(var _i = array_length(_array) - 1; _i >= 0; _i--){
+		if _array[_i] > 0 with obj_parcard{
+			if val == (_i+1){
+				alarm[0] = 5 + _timeadj*game_get_speed(gamespeed_fps) div 2
+				_timeadj += 1;
+				_array[_i] -= 1;
+				if _array[_i] == 0 break;
+			}
+		}
+	}
+	with obj_deck alarm[0] = 5 + _timeadj*game_get_speed(gamespeed_fps) div 2;
 }

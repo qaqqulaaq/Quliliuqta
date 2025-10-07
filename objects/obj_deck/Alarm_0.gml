@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-event_inherited()
-
-val = 2
+clear_cards(0);
+can_click = true;
