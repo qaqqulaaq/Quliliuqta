@@ -42,12 +42,12 @@ function draw_card(_num){
 	}
 	
 	switch _num{
-		case 0: instance_create_layer(_x,_y,"instances",obj_0suitchuq); break;
-		case 1: instance_create_layer(_x,_y,"instances",obj_1atausiq); break;
-		case 2: instance_create_layer(_x,_y,"instances",obj_2malguk); break;
-		case 3: instance_create_layer(_x,_y,"instances",obj_3pinasut); break;
-		case 4: instance_create_layer(_x,_y,"instances",obj_4sisamat); break;
-		case 5: instance_create_layer(_x,_y,"instances",obj_5tallimat); break;
+		case 0: instance_create_layer(_x,_y,"instances",obj_00suitchuq); break;
+		case 1: instance_create_layer(_x,_y,"instances",obj_01atausiq); break;
+		case 2: instance_create_layer(_x,_y,"instances",obj_02malguk); break;
+		case 3: instance_create_layer(_x,_y,"instances",obj_03pinasut); break;
+		case 4: instance_create_layer(_x,_y,"instances",obj_04sisamat); break;
+		case 5: instance_create_layer(_x,_y,"instances",obj_05tallimat); break;
 		
 	}
 	
