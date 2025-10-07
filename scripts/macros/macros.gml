@@ -1,6 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
+randomize();
+
 #macro KB 57344
 
 #macro K00 chr(57344)

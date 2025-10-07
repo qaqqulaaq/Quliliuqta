@@ -17,7 +17,13 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_1atausiq","order":3,"path":"objects/obj_1atausiq/obj_1atausiq.yy",},
+    {"name":"obj_2malguk","order":4,"path":"objects/obj_2malguk/obj_2malguk.yy",},
+    {"name":"obj_3pinasut","order":5,"path":"objects/obj_3pinasut/obj_3pinasut.yy",},
+    {"name":"obj_4sisamat","order":6,"path":"objects/obj_4sisamat/obj_4sisamat.yy",},
+    {"name":"obj_5tallimat","order":7,"path":"objects/obj_5tallimat/obj_5tallimat.yy",},
     {"name":"obj_deck","order":2,"path":"objects/obj_deck/obj_deck.yy",},
+    {"name":"obj_parcard","order":8,"path":"objects/obj_parcard/obj_parcard.yy",},
     {"name":"Function_bank","order":1,"path":"scripts/Function_bank/Function_bank.yy",},
     {"name":"spr_1atausiq","order":1,"path":"sprites/spr_1atausiq/spr_1atausiq.yy",},
     {"name":"spr_2malguk","order":2,"path":"sprites/spr_2malguk/spr_2malguk.yy",},

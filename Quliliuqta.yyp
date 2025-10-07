@@ -37,7 +37,13 @@
   "resources":[
     {"id":{"name":"fnt_genkak","path":"fonts/fnt_genkak/fnt_genkak.yy",},},
     {"id":{"name":"obj_0suitchuq","path":"objects/obj_0suitchuq/obj_0suitchuq.yy",},},
+    {"id":{"name":"obj_1atausiq","path":"objects/obj_1atausiq/obj_1atausiq.yy",},},
+    {"id":{"name":"obj_2malguk","path":"objects/obj_2malguk/obj_2malguk.yy",},},
+    {"id":{"name":"obj_3pinasut","path":"objects/obj_3pinasut/obj_3pinasut.yy",},},
+    {"id":{"name":"obj_4sisamat","path":"objects/obj_4sisamat/obj_4sisamat.yy",},},
+    {"id":{"name":"obj_5tallimat","path":"objects/obj_5tallimat/obj_5tallimat.yy",},},
     {"id":{"name":"obj_deck","path":"objects/obj_deck/obj_deck.yy",},},
+    {"id":{"name":"obj_parcard","path":"objects/obj_parcard/obj_parcard.yy",},},
     {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
     {"id":{"name":"Function_bank","path":"scripts/Function_bank/Function_bank.yy",},},
     {"id":{"name":"macros","path":"scripts/macros/macros.yy",},},
