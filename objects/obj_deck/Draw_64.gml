@@ -11,4 +11,4 @@ draw_set_valign(fa_middle)
 draw_line(room_width*3 div 4, 0, room_width*3 div 4, room_height)
 
 draw_text(room_width * 7 div 8, 32, "Points:")
-draw_text(room_width * 7 div 8, 32+string_height("Points:"), string(points))
+draw_text(room_width * 7 div 8, 32+string_height("Points:"), string(disp_pts))

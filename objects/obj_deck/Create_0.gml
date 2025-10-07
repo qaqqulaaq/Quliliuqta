@@ -12,3 +12,4 @@ deck_list = array_shuffle(deck_list);
 }
 
 points = 0
+disp_pts = chr(KB)
