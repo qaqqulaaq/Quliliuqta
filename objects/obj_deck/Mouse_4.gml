@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 if can_click{
+	with obj_parcard selected = false;
+	num_selected = 0;
+	val_selected = 0;
 	can_click = false;
 	if !check_card_5(){
 

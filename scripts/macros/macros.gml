@@ -3,6 +3,8 @@
 
 randomize();
 
+window_set_size(1280,720)
+
 #macro KB 57344
 
 #macro K00 chr(57344)
