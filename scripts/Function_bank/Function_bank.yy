@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Function_bank",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Function_bank",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
