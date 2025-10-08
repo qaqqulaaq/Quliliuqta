@@ -38,12 +38,20 @@ function check_card_10(){
 
 function check_card(_targ){
 	
+	// Double check to make sure that the values that would break the function get handled first
+	if _targ == 0 return [0];
+	
+	if _targ == 1 return [1];
+	
 	//Creates a return array assuming that all ones didn't work
-	var _rearray = [_targ-2,1];
+	var _rearray = [_targ];
 	
 	//Creates an array based on the target and counts how many of each card are available
 	var _status = array_create(_targ,0);
 	with obj_parcard _status[val] += 1;
+	while array_last(_status) == 0 array_pop(_status);
+	while array_length(_rearray) < array_length(_status) array_push(_rearray, 0);
+	
 	
 	//Run the loop until it is mathematically impossible to meet the condition
 	while array_length(_rearray) <= _targ{
@@ -54,10 +62,17 @@ function check_card(_targ){
 			var _done = true;
 			if _status[_i] < _rearray[_i] _done = false;
 			//if _done stays true, then the return array is returned
-			if _done return _rearray
+			if _done return _rearray;
 		}
 		//if not, the while loop needs to adjust the array
-		if _rearray[0] - 2 > 0
+		if _rearray[0] > 1 {
+			_rearray[0] -= 2
+			_rearray[1] += 1
+		}
+		
+		else if _rearray[0] == 1{
+			
+		}
 	}
 	//if there was no result after all that work, return with nothing
 	return false;
@@ -96,3 +111,10 @@ function array_fill(_array){
 	}
 }
 */
+
+function step_add(_array){
+	var _sum = 0
+	for (var _i = array_length(_array)-1; _i >= 0 ; _i++){
+		_sum += _array[_i] * (_i+3)
+	}	
+}
