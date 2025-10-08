@@ -5,6 +5,9 @@ function check_card_5(){
 	with obj_parcard{
 		_status[val] += 1
 	}
+	
+	
+	
 	////Starts by looking for the largest card, then moves down
 	if _status[5] >= 1 {
 		comp_select([0,0,0,0,1])
