@@ -1,9 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-selected = false;
+if !drawn {
+	drawn = true;
+	alarm[1] = 30;
+}
 
-drawn = false;
-set = false;
-
-alarm[1] = 30
+else set = true;
