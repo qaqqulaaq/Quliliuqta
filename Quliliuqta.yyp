@@ -63,6 +63,7 @@
     {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
     {"id":{"name":"check_card_10","path":"scripts/check_card_10/check_card_10.yy",},},
     {"id":{"name":"check_card_5","path":"scripts/check_card_5/check_card_5.yy",},},
+    {"id":{"name":"check_card_targ","path":"scripts/check_card_targ/check_card_targ.yy",},},
     {"id":{"name":"Function_bank","path":"scripts/Function_bank/Function_bank.yy",},},
     {"id":{"name":"macros","path":"scripts/macros/macros.yy",},},
     {"id":{"name":"spr_00suitchuq","path":"sprites/spr_00suitchuq/spr_00suitchuq.yy",},},

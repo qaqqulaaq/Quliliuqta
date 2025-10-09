@@ -2,7 +2,7 @@
 // You can write your code in this editor
 if can_click{
 	can_click = false;
-	if !check_card_5(){
+	if !check_card(5){
 
 		if array_length(deck_list) == 0 deck_shuffle();
 	

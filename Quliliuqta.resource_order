@@ -41,6 +41,7 @@
     {"name":"obj_deck","order":2,"path":"objects/obj_deck/obj_deck.yy",},
     {"name":"obj_parcard","order":8,"path":"objects/obj_parcard/obj_parcard.yy",},
     {"name":"check_card_10","order":1,"path":"scripts/check_card_10/check_card_10.yy",},
+    {"name":"check_card_targ","order":2,"path":"scripts/check_card_targ/check_card_targ.yy",},
     {"name":"Function_bank","order":1,"path":"scripts/Function_bank/Function_bank.yy",},
     {"name":"spr_01atausiq","order":1,"path":"sprites/spr_01atausiq/spr_01atausiq.yy",},
     {"name":"spr_02malguk","order":2,"path":"sprites/spr_02malguk/spr_02malguk.yy",},
