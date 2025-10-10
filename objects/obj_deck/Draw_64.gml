@@ -7,7 +7,6 @@ draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 
 
-
 draw_line(room_width*3 div 4, 0, room_width*3 div 4, room_height)
 
 draw_text(room_width * 7 div 8, 32, "Points:")

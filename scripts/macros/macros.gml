@@ -4,6 +4,8 @@
 randomize();
 
 #macro KB 57344
+#macro K20 chr(57345)+chr(57344)
+
 
 #macro K00 chr(57344)
 #macro K01 chr(57345)
@@ -26,3 +28,25 @@ randomize();
 #macro K18 chr(57362)
 #macro K19 chr(57363)
 
+
+global.numname[20] = "iñuññaq"
+global.numname[19] = "iñuñña-\nġutaiḷaq"
+global.numname[18] = "akimiaq\npiŋasut"
+global.numname[17] = "akimiaq\nmalġuk"
+global.numname[16] = "akimiaq\natausiq"
+global.numname[15] = "akimiaq"
+global.numname[14] = "akimia-\nġutaiḷaq"
+global.numname[13] = "qulit\npiŋasut"
+global.numname[12] = "qulit\nmalġuk"
+global.numname[11] = "qulit\natausiq"
+global.numname[10] = "qulit"
+global.numname[9] = "quliŋŋu-\nġutaiḷaq"
+global.numname[8] = "tallimat\npiŋasut"
+global.numname[7] = "tallimat\nmalġuk"
+global.numname[6] = "itchaksrat"
+global.numname[5] = "tallimat"
+global.numname[4] = "sisamat"
+global.numname[3] = "piŋasut"
+global.numname[2] = "malġuk"
+global.numname[1] = "atausiq"
+global.numname[0] = "suitchuq"

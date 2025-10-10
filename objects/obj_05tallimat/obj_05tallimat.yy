@@ -6,13 +6,10 @@
   "name":"obj_05tallimat",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"numbered cards",
+    "path":"folders/Objects/numbered cards.yy",
   },
-  "parentObjectId":{
-    "name":"obj_parcard",
-    "path":"objects/obj_parcard/obj_parcard.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_05tallimat",
-    "path":"sprites/spr_05tallimat/spr_05tallimat.yy",
+    "name":"spr_05tallimat_old",
+    "path":"sprites/spr_05tallimat_old/spr_05tallimat_old.yy",
   },
   "spriteMaskId":null,
   "visible":true,

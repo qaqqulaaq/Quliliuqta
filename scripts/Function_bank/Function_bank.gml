@@ -14,7 +14,7 @@ function deck_shuffle(){
 	for (var _i = 0; _i < 6; _i++){
 		
 		array_push(deck_list,0,1,1,2,2,3,3,4,4,5)
-		
+		//array_push(deck_list,0,0,0,0,0,0,0,0,0,0)
 		//array_push(deck_list,0,0,1,1,1,1,2,2,2,3,3,3)
 		//array_push(deck_list,0,0,0,2,2,2,2,3,3,3,3)
 		//array_push(deck_list,1,1,1,1,1,0,0,0,0)
@@ -57,26 +57,22 @@ function draw_card(_num){
 	var _y;
 	var _cards = instance_number(obj_parcard)
 	
-	if _cards > 3 {
-		_y = 208;
-		_x = 16 + 112*(_cards - 4)
+	if _cards > 9 {
+		_y = 240;
+		_x = 60 + 90*(_cards - 10)
 	}
+	
+	else if _cards > 4 {
+		_y = 135;
+		_x = 60 + 90*(_cards - 5)
+	}
+	
 	else {
-		_y = 32;
-		_x = 16 + 112*(_cards)
+		_y = 30;
+		_x = 60 + 90*(_cards)
 	}
 	
-	switch _num{
-		case 0: instance_create_layer(_x,_y,"instances",obj_00suitchuq); break;
-		case 1: instance_create_layer(_x,_y,"instances",obj_01atausiq); break;
-		case 2: instance_create_layer(_x,_y,"instances",obj_02malguk); break;
-		case 3: instance_create_layer(_x,_y,"instances",obj_03pinasut); break;
-		case 4: instance_create_layer(_x,_y,"instances",obj_04sisamat); break;
-		case 5: instance_create_layer(_x,_y,"instances",obj_05tallimat); break;
-		
-	}
-	
-	
+	instance_create_layer(_x,_y,"instances",obj_parcard,{val: _num});
 }
 
 //clears the cards. Must be called with obj_deck

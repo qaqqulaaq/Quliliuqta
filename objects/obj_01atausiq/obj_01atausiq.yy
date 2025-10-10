@@ -6,13 +6,10 @@
   "name":"obj_01atausiq",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"numbered cards",
+    "path":"folders/Objects/numbered cards.yy",
   },
-  "parentObjectId":{
-    "name":"obj_parcard",
-    "path":"objects/obj_parcard/obj_parcard.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_01atausiq",
-    "path":"sprites/spr_01atausiq/spr_01atausiq.yy",
+    "name":"spr_01atausiq_old",
+    "path":"sprites/spr_01atausiq_old/spr_01atausiq_old.yy",
   },
   "spriteMaskId":null,
   "visible":true,
