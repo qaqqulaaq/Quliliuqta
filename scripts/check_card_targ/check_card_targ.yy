@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"check_card_targ",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"check_card_targ",
+  "parent":{
+    "name":"Comp_AI",
+    "path":"folders/Scripts/Comp_AI.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
