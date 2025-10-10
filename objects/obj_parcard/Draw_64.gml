@@ -11,7 +11,7 @@ draw_set_valign(fa_top);
 if !drawn {
 	draw_set_font(fnt_cardtext_html)
 	var _warp = alarm[1]*4/(game_get_speed(gamespeed_fps))
-	draw_text_transformed(_sc*x,_sc*(y+35),"Tallima-/nliuqta",_warp,1,0)
+	draw_text_transformed(_sc*x,_sc*(y)+35,obj_deck.gametext,_warp,1,0)
 }
 
 else if !set{

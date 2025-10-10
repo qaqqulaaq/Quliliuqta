@@ -147,3 +147,12 @@ function position_card(){
 		_cards += 1
 	}
 }
+
+function mode_change(_goal){
+	
+	if _goal == 10{
+		goal = 10
+		gametext = "Quli-\nliuqta!"
+	}
+	
+}
