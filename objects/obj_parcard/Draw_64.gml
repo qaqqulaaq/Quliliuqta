@@ -23,7 +23,7 @@ else if !set{
 	var _textheight = string_height(KB + 19)+5
 
 	draw_set_font(fnt_cardtext_html)
-	draw_text_transformed(_sc*x,_sc*(y+_textheight),_text,_warp,1,0);
+	draw_text_transformed(_sc*x,_sc*y+_textheight,_text,_warp,1,0);
 
 	
 }
@@ -36,5 +36,5 @@ else {
 	var _textheight = string_height(KB + 19)+5
 
 	draw_set_font(fnt_cardtext_html)
-	draw_text(_sc*x,_sc*(y+_textheight),_text);
+	draw_text(_sc*x,_sc*y+_textheight,_text);
 }
