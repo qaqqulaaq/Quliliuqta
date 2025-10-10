@@ -3,6 +3,7 @@
     {"name":"Animation Curves","order":12,"path":"folders/Animation Curves.yy",},
     {"name":"Extensions","order":14,"path":"folders/Extensions.yy",},
     {"name":"Fonts","order":7,"path":"folders/Fonts.yy",},
+    {"name":"HTML","order":3,"path":"folders/Fonts/HTML.yy",},
     {"name":"Notes","order":13,"path":"folders/Notes.yy",},
     {"name":"Objects","order":9,"path":"folders/Objects.yy",},
     {"name":"numbered cards","order":37,"path":"folders/Objects/numbered cards.yy",},
@@ -21,7 +22,9 @@
   ],
   "ResourceOrderSettings":[
     {"name":"fnt_cardnum","order":1,"path":"fonts/fnt_cardnum/fnt_cardnum.yy",},
+    {"name":"fnt_cardtext_html","order":1,"path":"fonts/fnt_cardtext_html/fnt_cardtext_html.yy",},
     {"name":"fnt_cardtext","order":2,"path":"fonts/fnt_cardtext/fnt_cardtext.yy",},
+    {"name":"fnt_genkak_html","order":2,"path":"fonts/fnt_genkak_html/fnt_genkak_html.yy",},
     {"name":"obj_01atausiq","order":1,"path":"objects/obj_01atausiq/obj_01atausiq.yy",},
     {"name":"obj_02malguk","order":2,"path":"objects/obj_02malguk/obj_02malguk.yy",},
     {"name":"obj_03pinasut","order":3,"path":"objects/obj_03pinasut/obj_03pinasut.yy",},

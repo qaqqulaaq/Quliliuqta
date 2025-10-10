@@ -1,6 +1,14 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
+
+//set to 2 if loading HTML
+global.winscale = 2
+////////Uncomment when using an HTML Version
+window_set_size(1280,720)
+
+
+
 randomize();
 
 window_set_size(1280,720)

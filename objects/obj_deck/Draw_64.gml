@@ -1,13 +1,30 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-draw_set_font(fnt_genkak)
+
+
+var _deckheight = ceil(array_length(deck_list)/10);
+var _sc = global.winscale
+
+draw_set_font(fnt_genkak_html)
 draw_set_color(c_white)
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 
 
-draw_line(room_width*3 div 4, 0, room_width*3 div 4, room_height)
+draw_line(_sc*room_width*3 div 4, 0, _sc*room_width*3 div 4, _sc*room_height)
 
-draw_text(room_width * 7 div 8, 32, "Points:")
-draw_text(room_width * 7 div 8, 32+string_height("Points:"), string(disp_pts))
+draw_text(_sc*room_width * 7 div 8, 32, "Points:")
+draw_text(_sc*room_width * 7 div 8, 32+string_height("Points:"), string(disp_pts))
+
+
+draw_set_color(c_black)
+draw_set_halign(fa_center)
+draw_set_valign(fa_middle)
+draw_set_font(fnt_cardtext_html)
+draw_text(_sc*(x-_deckheight+3),_sc*(y-_deckheight+35),"Tallima-\nliuqta!");
+
+
+
+draw_set_font(fnt_genkak_html)
+draw_text(_sc*(x-_deckheight+3),_sc*(y-_deckheight+sprite_height-30), string(disp_deck))
