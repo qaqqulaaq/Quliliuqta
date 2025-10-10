@@ -33,12 +33,13 @@ function check_card(_goal){
 		
 		//The _status array is trimmed to the highest available valuse value
 		while array_last(_status) == 0 array_pop(_status);	
-		var _len = array_length(_status)
+		_status[array_length(_status)-1] -= 1;
+		var _len = array_length(_status);
 	
 
 		//an array to be run through comp select is created
-		var _returnarray = array_create(_len - 1, 0)
-		array_push(_returnarray,1)
+		var _returnarray = array_create(_len - 1, 0);
+		array_push(_returnarray,1);
 
 	
 		//A list of arrays of the same length or less to check is obtained
