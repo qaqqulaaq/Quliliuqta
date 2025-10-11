@@ -6,7 +6,7 @@ goal = 5;
 
 gametext = "Tallima-\nliuqta!";
 
-mode_change(10)
+//mode_change(10)
 
 can_click = true;
 

@@ -1,0 +1,32 @@
+/// @description Insert description here
+// You can write your code in this editor
+
+if can_click{
+	can_click = false;
+	if !check_card(goal){
+
+		if array_length(deck_list) == 0 deck_shuffle();
+	
+		else if instance_number(obj_parcard) < 15 {
+			draw_card(array_pop(deck_list));
+			alarm[2] = 10
+		}
+	
+		else {
+			if fail_counter > 2 deck_shuffle();
+			else{
+				fail_counter += 1
+				var _restock = [];
+				with obj_parcard{
+					array_push(_restock, val);
+					instance_destroy(self);
+				}
+				deck_list = array_concat(deck_list,_restock)
+				deck_list = array_shuffle(deck_list)
+			}
+		}
+	
+		disp_deck = point_convert(array_length(deck_list))
+		can_click = true;
+	}
+}

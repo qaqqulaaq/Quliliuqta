@@ -74,7 +74,7 @@ function draw_card(_num=-1){
 		_x = 60 + 90*(_cards)
 	}
 	
-	if _num > -1 instance_create_layer(570,240,"instances",obj_parcard,{val: _num, targ_x: _x, targ_y: _y, hspeed: -(570 - _x)*2 div game_get_speed(gamespeed_fps), vspeed: -(240 - _y)*2 div game_get_speed(gamespeed_fps)});
+	if _num > -1 instance_create_layer(570,240,"instances",obj_parcard,{val: _num, targ_x: _x, targ_y: _y, hspeed: -(570 - _x)*2 / game_get_speed(gamespeed_fps), vspeed: -(240 - _y)*2 / game_get_speed(gamespeed_fps)});
 	
 	
 }
