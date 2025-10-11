@@ -6,7 +6,10 @@ if can_click{
 
 		if array_length(deck_list) == 0 deck_shuffle();
 	
-		else if instance_number(obj_parcard) < 15 draw_card(array_pop(deck_list));
+		else if instance_number(obj_parcard) < 15 {
+			draw_card(array_pop(deck_list));
+			alarm[2] = 10
+		}
 	
 		else {
 			if fail_counter > 2 deck_shuffle();

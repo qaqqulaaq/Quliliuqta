@@ -3,12 +3,9 @@
     {"name":"Animation Curves","order":12,"path":"folders/Animation Curves.yy",},
     {"name":"Extensions","order":14,"path":"folders/Extensions.yy",},
     {"name":"Fonts","order":7,"path":"folders/Fonts.yy",},
-<<<<<<< Updated upstream
-=======
     {"name":"1080","order":4,"path":"folders/Fonts/1080.yy",},
     {"name":"0720","order":3,"path":"folders/Fonts/0720.yy",},
     {"name":"0360","order":5,"path":"folders/Fonts/0360.yy",},
->>>>>>> Stashed changes
     {"name":"Notes","order":13,"path":"folders/Notes.yy",},
     {"name":"Objects","order":9,"path":"folders/Objects.yy",},
     {"name":"numbered cards","order":37,"path":"folders/Objects/numbered cards.yy",},
@@ -26,17 +23,12 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
-<<<<<<< Updated upstream
-    {"name":"fnt_cardnum","order":1,"path":"fonts/fnt_cardnum/fnt_cardnum.yy",},
-    {"name":"fnt_cardtext","order":2,"path":"fonts/fnt_cardtext/fnt_cardtext.yy",},
-=======
     {"name":"fnt_cardtext_1","order":1,"path":"fonts/fnt_cardtext_1/fnt_cardtext_1.yy",},
     {"name":"fnt_cardtext_2","order":1,"path":"fonts/fnt_cardtext_2/fnt_cardtext_2.yy",},
     {"name":"fnt_cardtext_3","order":1,"path":"fonts/fnt_cardtext_3/fnt_cardtext_3.yy",},
     {"name":"fnt_points_1","order":2,"path":"fonts/fnt_points_1/fnt_points_1.yy",},
     {"name":"fnt_points_2","order":2,"path":"fonts/fnt_points_2/fnt_points_2.yy",},
     {"name":"fnt_points_3","order":2,"path":"fonts/fnt_points_3/fnt_points_3.yy",},
->>>>>>> Stashed changes
     {"name":"obj_01atausiq","order":1,"path":"objects/obj_01atausiq/obj_01atausiq.yy",},
     {"name":"obj_02malguk","order":2,"path":"objects/obj_02malguk/obj_02malguk.yy",},
     {"name":"obj_03pinasut","order":3,"path":"objects/obj_03pinasut/obj_03pinasut.yy",},

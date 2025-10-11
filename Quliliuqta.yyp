@@ -13,12 +13,9 @@
     {"$GMFolder":"","%Name":"Animation Curves","folderPath":"folders/Animation Curves.yy","name":"Animation Curves","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
-<<<<<<< Updated upstream
-=======
     {"$GMFolder":"","%Name":"1080","folderPath":"folders/Fonts/1080.yy","name":"1080","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"0720","folderPath":"folders/Fonts/0720.yy","name":"0720","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"0360","folderPath":"folders/Fonts/0360.yy","name":"0360","resourceType":"GMFolder","resourceVersion":"2.0",},
->>>>>>> Stashed changes
     {"$GMFolder":"","%Name":"Notes","folderPath":"folders/Notes.yy","name":"Notes","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"numbered cards","folderPath":"folders/Objects/numbered cards.yy","name":"numbered cards","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -44,11 +41,6 @@
   },
   "name":"Quliliuqta",
   "resources":[
-<<<<<<< Updated upstream
-    {"id":{"name":"fnt_cardnum","path":"fonts/fnt_cardnum/fnt_cardnum.yy",},},
-    {"id":{"name":"fnt_cardtext","path":"fonts/fnt_cardtext/fnt_cardtext.yy",},},
-    {"id":{"name":"fnt_genkak","path":"fonts/fnt_genkak/fnt_genkak.yy",},},
-=======
     {"id":{"name":"fnt_cardnum_1","path":"fonts/fnt_cardnum_1/fnt_cardnum_1.yy",},},
     {"id":{"name":"fnt_cardnum_2","path":"fonts/fnt_cardnum_2/fnt_cardnum_2.yy",},},
     {"id":{"name":"fnt_cardnum_3","path":"fonts/fnt_cardnum_3/fnt_cardnum_3.yy",},},
@@ -58,7 +50,6 @@
     {"id":{"name":"fnt_points_1","path":"fonts/fnt_points_1/fnt_points_1.yy",},},
     {"id":{"name":"fnt_points_2","path":"fonts/fnt_points_2/fnt_points_2.yy",},},
     {"id":{"name":"fnt_points_3","path":"fonts/fnt_points_3/fnt_points_3.yy",},},
->>>>>>> Stashed changes
     {"id":{"name":"obj_00suitchuq","path":"objects/obj_00suitchuq/obj_00suitchuq.yy",},},
     {"id":{"name":"obj_01atausiq","path":"objects/obj_01atausiq/obj_01atausiq.yy",},},
     {"id":{"name":"obj_02malguk","path":"objects/obj_02malguk/obj_02malguk.yy",},},

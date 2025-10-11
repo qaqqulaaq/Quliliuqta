@@ -1,10 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-<<<<<<< Updated upstream
-deck_list = []
-fail_counter = 0
-goal = 10
-=======
 
 if global.winscale == 2 sprite_index = spr_deck_0720
 else if global.winscale == 3 sprite_index = spr_deck_1080
@@ -17,7 +12,6 @@ goal = 5;
 gametext = "Tallimaliuqta!";
 
 //mode_change(5)
->>>>>>> Stashed changes
 
 can_click = true;
 

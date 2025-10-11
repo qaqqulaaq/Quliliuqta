@@ -52,36 +52,6 @@ function point_add(_num){
 	if points > 0 disp_pts = point_convert(points)
 }
 
-<<<<<<< Updated upstream
-function draw_card(_num=-1){
-	
-	//y = 32 if less than 4, 208 if greater than 4; x = 16 + 112*num of cards - 1
-	var _x;
-	var _y;
-	var _cards = instance_number(obj_parcard)
-	
-	if _cards > 9 {
-		_y = 240;
-		_x = 60 + 90*(_cards - 10)
-	}
-	
-	else if _cards > 4 {
-		_y = 135;
-		_x = 60 + 90*(_cards - 5)
-	}
-	
-	else {
-		_y = 30;
-		_x = 60 + 90*(_cards)
-	}
-	
-	if _num > -1 instance_create_layer(570,240,"instances",obj_parcard,{val: _num, targ_x: _x, targ_y: _y, hspeed: -(570 - _x)*2 div game_get_speed(gamespeed_fps), vspeed: -(240 - _y)*2 div game_get_speed(gamespeed_fps)});
-	
-	
-}
-
-=======
->>>>>>> Stashed changes
 //clears the cards. Must be called with obj_deck
 function clear_cards(pts){
 	fail_counter = 0;
@@ -115,41 +85,6 @@ function comp_select(_array){
 }
 
 
-<<<<<<< Updated upstream
-
-	var _cards = 0
-	
-
-
-
-	with obj_parcard{
-		var _x;
-		var _y;
-		
-		if _cards > 9 {
-			_y = 240;
-			_x = 60 + 90*(_cards - 10)
-		}
-	
-		else if _cards > 4 {
-			_y = 135;
-			_x = 60 + 90*(_cards - 5)
-		}
-	
-		else {
-			_y = 30;
-			_x = 60 + 90*(_cards)
-		}		
-		
-		
-		targ_x= _x; 
-		targ_y= _y; 
-		hspeed= -(x - _x)*4 div game_get_speed(gamespeed_fps);
-		vspeed= -(y - _y)*4 div game_get_speed(gamespeed_fps)
-		alarm[2] = game_get_speed(gamespeed_fps) div 4
-		_cards += 1
-	}
-=======
 //returns an array with x and y to determine where the cards are supposed to go
 
 function mode_change(_goal){
@@ -159,5 +94,4 @@ function mode_change(_goal){
 		gametext = "Quliliuqta!"
 	}
 	
->>>>>>> Stashed changes
 }
