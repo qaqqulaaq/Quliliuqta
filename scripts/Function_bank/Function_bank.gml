@@ -52,6 +52,7 @@ function point_add(_num){
 	if points > 0 disp_pts = point_convert(points)
 }
 
+<<<<<<< Updated upstream
 function draw_card(_num=-1){
 	
 	//y = 32 if less than 4, 208 if greater than 4; x = 16 + 112*num of cards - 1
@@ -79,6 +80,8 @@ function draw_card(_num=-1){
 	
 }
 
+=======
+>>>>>>> Stashed changes
 //clears the cards. Must be called with obj_deck
 function clear_cards(pts){
 	fail_counter = 0;
@@ -111,8 +114,8 @@ function comp_select(_array){
 	with obj_deck alarm[0] = 5 + _timeadj*game_get_speed(gamespeed_fps) div 2;
 }
 
-function position_card(){
 
+<<<<<<< Updated upstream
 
 	var _cards = 0
 	
@@ -146,4 +149,15 @@ function position_card(){
 		alarm[2] = game_get_speed(gamespeed_fps) div 4
 		_cards += 1
 	}
+=======
+//returns an array with x and y to determine where the cards are supposed to go
+
+function mode_change(_goal){
+	
+	if _goal == 10{
+		goal = 10
+		gametext = "Quliliuqta!"
+	}
+	
+>>>>>>> Stashed changes
 }

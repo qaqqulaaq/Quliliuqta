@@ -3,6 +3,12 @@
     {"name":"Animation Curves","order":12,"path":"folders/Animation Curves.yy",},
     {"name":"Extensions","order":14,"path":"folders/Extensions.yy",},
     {"name":"Fonts","order":7,"path":"folders/Fonts.yy",},
+<<<<<<< Updated upstream
+=======
+    {"name":"1080","order":4,"path":"folders/Fonts/1080.yy",},
+    {"name":"0720","order":3,"path":"folders/Fonts/0720.yy",},
+    {"name":"0360","order":5,"path":"folders/Fonts/0360.yy",},
+>>>>>>> Stashed changes
     {"name":"Notes","order":13,"path":"folders/Notes.yy",},
     {"name":"Objects","order":9,"path":"folders/Objects.yy",},
     {"name":"numbered cards","order":37,"path":"folders/Objects/numbered cards.yy",},
@@ -20,8 +26,17 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+<<<<<<< Updated upstream
     {"name":"fnt_cardnum","order":1,"path":"fonts/fnt_cardnum/fnt_cardnum.yy",},
     {"name":"fnt_cardtext","order":2,"path":"fonts/fnt_cardtext/fnt_cardtext.yy",},
+=======
+    {"name":"fnt_cardtext_1","order":1,"path":"fonts/fnt_cardtext_1/fnt_cardtext_1.yy",},
+    {"name":"fnt_cardtext_2","order":1,"path":"fonts/fnt_cardtext_2/fnt_cardtext_2.yy",},
+    {"name":"fnt_cardtext_3","order":1,"path":"fonts/fnt_cardtext_3/fnt_cardtext_3.yy",},
+    {"name":"fnt_points_1","order":2,"path":"fonts/fnt_points_1/fnt_points_1.yy",},
+    {"name":"fnt_points_2","order":2,"path":"fonts/fnt_points_2/fnt_points_2.yy",},
+    {"name":"fnt_points_3","order":2,"path":"fonts/fnt_points_3/fnt_points_3.yy",},
+>>>>>>> Stashed changes
     {"name":"obj_01atausiq","order":1,"path":"objects/obj_01atausiq/obj_01atausiq.yy",},
     {"name":"obj_02malguk","order":2,"path":"objects/obj_02malguk/obj_02malguk.yy",},
     {"name":"obj_03pinasut","order":3,"path":"objects/obj_03pinasut/obj_03pinasut.yy",},
@@ -44,6 +59,7 @@
     {"name":"obj_20inunnaq","order":20,"path":"objects/obj_20inunnaq/obj_20inunnaq.yy",},
     {"name":"obj_deck","order":2,"path":"objects/obj_deck/obj_deck.yy",},
     {"name":"obj_parcard","order":8,"path":"objects/obj_parcard/obj_parcard.yy",},
+    {"name":"card_positioning","order":4,"path":"scripts/card_positioning/card_positioning.yy",},
     {"name":"check_card_10","order":1,"path":"scripts/check_card_10/check_card_10.yy",},
     {"name":"check_card_targ","order":2,"path":"scripts/check_card_targ/check_card_targ.yy",},
     {"name":"Function_bank","order":1,"path":"scripts/Function_bank/Function_bank.yy",},
@@ -70,9 +86,13 @@
     {"name":"spr_19akimiaqutailaq","order":20,"path":"sprites/spr_19akimiaqutailaq/spr_19akimiaqutailaq.yy",},
     {"name":"spr_20inunnaq","order":21,"path":"sprites/spr_20inunnaq/spr_20inunnaq.yy",},
     {"name":"spr_back","order":24,"path":"sprites/spr_back/spr_back.yy",},
-    {"name":"spr_blank","order":25,"path":"sprites/spr_blank/spr_blank.yy",},
+    {"name":"spr_blank_0360","order":25,"path":"sprites/spr_blank_0360/spr_blank_0360.yy",},
+    {"name":"spr_blank_0720","order":28,"path":"sprites/spr_blank_0720/spr_blank_0720.yy",},
+    {"name":"spr_blank_1080","order":27,"path":"sprites/spr_blank_1080/spr_blank_1080.yy",},
+    {"name":"spr_deck_0360","order":22,"path":"sprites/spr_deck_0360/spr_deck_0360.yy",},
+    {"name":"spr_deck_0720","order":29,"path":"sprites/spr_deck_0720/spr_deck_0720.yy",},
+    {"name":"spr_deck_1080","order":30,"path":"sprites/spr_deck_1080/spr_deck_1080.yy",},
     {"name":"spr_deck_old","order":22,"path":"sprites/spr_deck_old/spr_deck_old.yy",},
-    {"name":"spr_deck","order":22,"path":"sprites/spr_deck/spr_deck.yy",},
     {"name":"Sprite8","order":16,"path":"sprites/Sprite8/Sprite8.yy",},
   ],
 }

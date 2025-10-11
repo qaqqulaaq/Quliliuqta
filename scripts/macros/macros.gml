@@ -1,6 +1,18 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
+<<<<<<< Updated upstream
+=======
+
+//set to 2 if loading HTML
+global.winscale = 3;
+font_set();
+
+////////Uncomment when using an HTML Version
+
+
+
+>>>>>>> Stashed changes
 randomize();
 
 #macro KB 57344
@@ -50,3 +62,27 @@ global.numname[3] = "piŋasut"
 global.numname[2] = "malġuk"
 global.numname[1] = "atausiq"
 global.numname[0] = "suitchuq"
+
+
+function font_set(){
+	switch global.winscale{
+		
+		case 1:
+			global.cardtextfont = fnt_cardtext_1
+			global.cardnumfont = fnt_cardnum_1
+			global.pointfont = fnt_points_1
+			break;
+		
+		case 2:
+			global.cardtextfont = fnt_cardtext_2
+			global.cardnumfont = fnt_cardnum_2
+			global.pointfont = fnt_points_2
+			break;
+			
+		case 3:
+			global.cardtextfont = fnt_cardtext_3
+			global.cardnumfont = fnt_cardnum_3
+			global.pointfont = fnt_points_3
+			break;
+	}
+}
