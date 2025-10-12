@@ -2,13 +2,13 @@
 // You can write your code in this editor
 if can_click{
 	can_click = false;
-	if !check_card(goal){
+	alarm[2] = game_get_speed(gamespeed_fps) div 2
+	if !check_card(global.gamegoal){
 
 		if array_length(deck_list) == 0 deck_shuffle();
 	
 		else if instance_number(obj_parcard) < 15 {
 			draw_card(array_pop(deck_list));
-			alarm[2] = 10
 		}
 	
 		else {
@@ -26,6 +26,5 @@ if can_click{
 		}
 	
 		disp_deck = point_convert(array_length(deck_list))
-		can_click = true;
 	}
 }

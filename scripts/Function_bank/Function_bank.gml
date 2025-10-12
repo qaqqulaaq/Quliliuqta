@@ -11,16 +11,12 @@ function deck_shuffle(){
 
 	deck_list = []
 
-	for (var _i = 0; _i < 30 div goal; _i++){
+	
+
 		
-		if goal == 5 array_push(deck_list,0,1,1,2,2,3,3,4,4,5)
-		else if goal == 10 array_push(deck_list, 0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10)
-		
-		//array_push(deck_list,0,0,0,0,0,0,0,0,0,0)
-		//array_push(deck_list,0,0,1,1,1,1,2,2,2,3,3,3)
-		//array_push(deck_list,0,0,0,2,2,2,2,3,3,3,3)
-		//array_push(deck_list,1,1,1,1,1,0,0,0,0)
-	}
+	if global.gamegoal == 5 repeat 6 array_push(deck_list,0,1,1,2,2,3,3,4,4,5)
+	else if global.gamegoal == 10 repeat 3 array_push(deck_list, 0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10)
+	else if global.gamegoal == 20 repeat 3 array_push(deck_list, 0,1,1,2,2,3,3,4,4,5,5,5,5,6,7,10,10,15,15,20)
 
 	deck_list = array_shuffle(deck_list);
 	
@@ -53,15 +49,6 @@ function point_add(_num){
 }
 
 //clears the cards. Must be called with obj_deck
-function clear_cards(pts){
-	fail_counter = 0;
-	point_add(pts);
-	num_selected = 0
-	val_selected = 0
-	with (obj_parcard) if selected instance_destroy(self)
-	position_card();
-
-}
 
 function comp_select(_array){
 	var _timeadj = 0;
@@ -89,9 +76,19 @@ function comp_select(_array){
 
 function mode_change(_goal){
 	
-	if _goal == 10{
-		goal = 10
-		gametext = "Quliliuqta!"
+	if _goal == 5{
+		global.gamegoal = 5
+		global.gamemode = "Tallimaliqta!"
+	}
+	
+	else if _goal == 10{
+		global.gamegoal = 10
+		global.gamemode = "Quliliuqta!"
+	}
+	
+	else if _goal == 20{
+		global.gamegoal = 20
+		global.gamemode = "Iñuiññaliuqta!"	
 	}
 	
 }

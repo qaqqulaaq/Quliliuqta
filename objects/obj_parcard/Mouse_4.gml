@@ -14,8 +14,8 @@ if obj_deck.can_click{
 			with obj_deck{
 				num_selected += 1;
 				val_selected += _val;		
-				if val_selected == goal {
-					alarm[1] = game_get_speed(gamespeed_fps);
+				if val_selected == global.gamegoal {
+					alarm[1] = game_get_speed(gamespeed_fps) div 2+1;
 					can_click = false
 				}
 			}

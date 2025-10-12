@@ -41,7 +41,7 @@ if !drawn {
 	draw_set_font(global.cardtextfont)
 	var _warp = alarm[1]*4/(game_get_speed(gamespeed_fps))
 	draw_sprite_ext(sprite_index,0,x,y,_warp,1,0,c_white,1)
-	draw_text_transformed(x,y+35,obj_deck.gametext,_warp,1,0)
+	draw_text_transformed(x,y+35,global.gamemode,_warp,1,0)
 }
 
 else if !set{
