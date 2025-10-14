@@ -3,8 +3,7 @@
 
 function draw_card(_num){
 	
-	//y = 32 if less than 4, 208 if greater than 4; x = 16 + 112*num of cards - 1
-
+	//y = 32 if less than 4, 208 if greater than 4; x = 16 + 112*num of cards - 1 
 	var _pos = card_place()
 	var _x = 570*global.winscale
 	var _y = 240*global.winscale
@@ -40,7 +39,7 @@ function card_place(){
 		
 			if _cards > 9 {
 				_y = 240*global.winscale;
-				_x = 60 + 90*(_cards - 10)*global.winscale;
+				_x = (60 + 90*(_cards - 10))*global.winscale;
 			}
 	
 			else if _cards > 4 {

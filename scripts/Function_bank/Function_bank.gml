@@ -78,7 +78,7 @@ function mode_change(_goal){
 	
 	if _goal == 5{
 		global.gamegoal = 5
-		global.gamemode = "Tallimaliqta!"
+		global.gamemode = "Tallimaliuqta!"
 	}
 	
 	else if _goal == 10{

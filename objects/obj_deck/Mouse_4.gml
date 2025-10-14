@@ -3,6 +3,9 @@
 if can_click{
 	can_click = false;
 	alarm[2] = game_get_speed(gamespeed_fps) div 2
+	with obj_parcard selected = false;
+	num_selected = 0;
+	val_selected = 0;
 	if !check_card(global.gamegoal){
 
 		if array_length(deck_list) == 0 deck_shuffle();
