@@ -3,14 +3,15 @@
 
 
 //set to 2 if loading HTML
-global.winscale = 2;
+global.winscale = 3;
 font_set();
 
 ////////Uncomment when using an HTML Version
 
-global.gamemode = "Tallimaliqta!"
-global.gamegoal = 5
-
+global.gamemode = "Quliliuqta!"
+global.gamegoal = 10
+global.num_of_players = 2;
+global.gametimer = 0
 
 randomize();
 

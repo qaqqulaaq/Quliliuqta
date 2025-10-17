@@ -23,7 +23,7 @@
   ],
   "name":"spr_exit",
   "nineSlice":null,
-  "origin":1,
+  "origin":2,
   "parent":{
     "name":"Sprites",
     "path":"folders/Sprites.yy",
@@ -77,7 +77,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":16,
+    "xorigin":32,
     "yorigin":0,
   },
   "swatchColours":null,

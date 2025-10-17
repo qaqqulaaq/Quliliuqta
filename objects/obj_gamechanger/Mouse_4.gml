@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-var _goal = 5;
+var _goal;
 
 switch mode_set {
 	case "Tallimaliuqta!": _goal = 5; break;
@@ -12,4 +12,3 @@ switch mode_set {
 
 mode_change(_goal);
 
-room_goto(rm_game)

@@ -1,8 +1,25 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+
+var _can_draw = "none"
+with obj_draw_button if !has_drawn or !has_drawn2 {
+	_can_draw = id
+	break;
+}
+
+if _can_draw != "none" with _can_draw {
+	pressed = true
+	event_perform(ev_mouse,ev_left_release)
+}
+
+/*
 if can_click{
 	can_click = false;
 	alarm[2] = game_get_speed(gamespeed_fps) div 2
+	with obj_parcard selected = false;
+	num_selected = 0;
+	val_selected = 0;
 	if !check_card(global.gamegoal){
 
 		if array_length(deck_list) == 0 deck_shuffle();
@@ -28,3 +45,4 @@ if can_click{
 		disp_deck = point_convert(array_length(deck_list))
 	}
 }
+*/
