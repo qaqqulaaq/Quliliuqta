@@ -1,5 +1,9 @@
 /// @description Draw Fonts in Gui for better resolution
 // You can write your code in this editor
+
+
+
+
 /*
 var _text = global.numname[val]
 var _sc = global.winscale
@@ -40,5 +44,4 @@ else {
 }
 
 */
-
 

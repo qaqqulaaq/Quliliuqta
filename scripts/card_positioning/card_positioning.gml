@@ -5,8 +5,8 @@ function draw_card(_num){
 	
 	//y = 32 if less than 4, 208 if greater than 4; x = 16 + 112*num of cards - 1 
 	var _pos = card_place()
-	var _x = 570*global.winscale
-	var _y = 240*global.winscale
+	var _x = 320*global.winscale
+	var _y = 230*global.winscale
 	
 	instance_create_layer(_x,_y,"Flying",obj_parcard,{val: _num, targ_x: _pos[0], targ_y: _pos[1], hspeed: (_pos[0]- _x)*2 / game_get_speed(gamespeed_fps), vspeed: (_pos[1] - _y)*2 / game_get_speed(gamespeed_fps)});
 	
@@ -29,26 +29,22 @@ function position_card(){
 }
 
 function card_place(){
-		var _x = 60*global.winscale;
-		var _y = 30*global.winscale;
+		var _x = 80*global.winscale;
+		var _y = 32*global.winscale;
 		
 		var _cards = -1;
 		
 		while position_meeting(_x,_y,obj_parcard){
 			_cards += 1
 		
-			if _cards > 9 {
-				_y = 240*global.winscale;
-				_x = (60 + 90*(_cards - 10))*global.winscale;
-			}
-	
-			else if _cards > 4 {
-				_y = 135*global.winscale;
-				_x = (60 + 90*(_cards - 5))*global.winscale;
+			if _cards > 6 {
+				_x = ( 80 *(_cards-6))*global.winscale;
+				_y = 128*global.winscale;
 			}
 	
 			else {		
-				_x = (60 + 90*(_cards))*global.winscale
+				_x = ( 80 *(_cards+1))*global.winscale;
+				_y = 32 * global.winscale;
 			}
 		
 		}
@@ -56,10 +52,24 @@ function card_place(){
 		return [_x,_y];
 }
 
-function clear_cards(pts){
+function clear_cards(pts,_player){
 	fail_counter = 0;
-	point_add(pts);
-	num_selected = 0
-	val_selected = 0
-	with (obj_parcard) if selected instance_destroy(self)
+	with obj_player_stats if _player == player_num{
+		player_score += pts
+		disp_score = point_convert(player_score)
+	}
+	with obj_parcard if selected{
+		var _x;
+		switch _player{
+			case 0: _x = 225; break;
+			case 1: _x = 1695; break;
+			case 2: _x = 615; break;
+			case 3: _x = 1305; break;
+			default: _x = 0; break;		
+		}
+		layer_add_instance("Flying",id)
+		hspeed = (_x - x)*3 / game_get_speed(gamespeed_fps)
+		vspeed = (room_height - y)*3 / game_get_speed(gamespeed_fps)
+		alarm[3] = game_get_speed(gamespeed_fps) / 3
+	}
 }

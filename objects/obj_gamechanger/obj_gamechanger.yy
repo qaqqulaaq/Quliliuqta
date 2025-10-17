@@ -11,10 +11,13 @@
   "name":"obj_gamechanger",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"menu_objects",
+    "path":"folders/Objects/Touchables/menu_objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_ui_parent",
+    "path":"objects/obj_ui_parent/obj_ui_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -36,8 +39,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_deck",
-    "path":"sprites/spr_deck/spr_deck.yy",
+    "name":"spr_deck_1080",
+    "path":"sprites/spr_deck_1080/spr_deck_1080.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,5 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+
+
+/*
 if can_click{
 	can_click = false;
 	alarm[2] = game_get_speed(gamespeed_fps) div 2
@@ -31,3 +35,4 @@ if can_click{
 		disp_deck = point_convert(array_length(deck_list))
 	}
 }
+*/

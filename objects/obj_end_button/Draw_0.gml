@@ -1,0 +1,16 @@
+/// @description Insert description here
+// You can write your code in this editor
+
+
+if player_active and has_drawn draw_sprite(sprite_index,sprite_timer div 3,x,y)
+else draw_sprite(sprite_index,3,x,y)
+
+if timer_dir == 1 and sprite_timer < 10 sprite_timer++
+else if timer_dir == -1 and sprite_timer > 0 sprite_timer--
+
+draw_set_font(global.cardtextfont)
+draw_set_color(c_white)
+draw_set_halign(fa_center)
+draw_set_valign(fa_middle)
+
+draw_text(x,y+sprite_height div 2,label);

@@ -8,9 +8,10 @@ font_set();
 
 ////////Uncomment when using an HTML Version
 
-global.gamemode = "Tallimaliuqta!"
-global.gamegoal = 5
-
+global.gamemode = "Quliliuqta!"
+global.gamegoal = 10
+global.num_of_players = 2;
+global.gametimer = 0
 
 randomize();
 

@@ -2,9 +2,9 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 
-function deck_shuffle(){
+function deck_shuffle(_takeaway = []){
 
-	with obj_parcard instance_destroy()
+	if array_length(_takeaway) == 0 with obj_parcard instance_destroy()
 
 	num_selected = 0
 	val_selected = 0
@@ -14,9 +14,17 @@ function deck_shuffle(){
 	
 
 		
-	if global.gamegoal == 5 repeat 6 array_push(deck_list,0,1,1,2,2,3,3,4,4,5)
-	else if global.gamegoal == 10 repeat 3 array_push(deck_list, 0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10)
+	if global.gamegoal == 5 repeat 6 array_push(deck_list,0,1,1,1,2,2,3,3,4,5)
+	else if global.gamegoal == 10 repeat 3 array_push(deck_list, 0,1,1,1,2,2,3,3,3,4,4,5,5,6,6,7,7,8,9,10)
 	else if global.gamegoal == 20 repeat 3 array_push(deck_list, 0,1,1,2,2,3,3,4,4,5,5,5,5,6,7,10,10,15,15,20)
+
+	
+	for (var _i = 0; _i < array_length(_takeaway); _i++){
+		var _index = array_get_index(deck_list,_takeaway[_i])
+		
+		if _index != -1 array_delete(deck_list,_index, 1)
+	}
+	
 
 	deck_list = array_shuffle(deck_list);
 	
@@ -43,10 +51,7 @@ function point_convert(_num){
 	
 }
 
-function point_add(_num){
-	points += _num
-	if points > 0 disp_pts = point_convert(points)
-}
+
 
 //clears the cards. Must be called with obj_deck
 

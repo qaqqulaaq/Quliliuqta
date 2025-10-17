@@ -12,4 +12,3 @@ switch mode_set {
 
 mode_change(_goal);
 
-room_goto(rm_game)

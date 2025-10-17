@@ -1,4 +1,5 @@
 /// @description Success Moment
+//Destroy the cards once they leave the screen
 
-clear_cards(num_selected);
-can_click = true
+ 
+

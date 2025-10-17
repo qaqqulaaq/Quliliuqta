@@ -2,4 +2,4 @@
 // You can write your code in this editor
 
 y = 5
-x = room_width - 30
+x = room_width - 5
