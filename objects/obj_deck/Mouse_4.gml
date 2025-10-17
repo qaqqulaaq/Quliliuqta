@@ -2,6 +2,16 @@
 // You can write your code in this editor
 
 
+var _can_draw = "none"
+with obj_draw_button if !has_drawn or !has_drawn2 {
+	_can_draw = id
+	break;
+}
+
+if _can_draw != "none" with _can_draw {
+	pressed = true
+	event_perform(ev_mouse,ev_left_release)
+}
 
 /*
 if can_click{

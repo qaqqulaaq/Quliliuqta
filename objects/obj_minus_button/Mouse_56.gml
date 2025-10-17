@@ -3,6 +3,4 @@
 
 
 if global.gametimer > 0  timer_dir = -1
-
-
 pressed = false

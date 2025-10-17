@@ -8,7 +8,7 @@ function draw_card(_num){
 	var _x = 320*global.winscale
 	var _y = 230*global.winscale
 	
-	instance_create_layer(_x,_y,"Flying",obj_parcard,{val: _num, targ_x: _pos[0], targ_y: _pos[1], hspeed: (_pos[0]- _x)*2 / game_get_speed(gamespeed_fps), vspeed: (_pos[1] - _y)*2 / game_get_speed(gamespeed_fps)});
+	instance_create_layer(_x,_y,"Flying",obj_parcard,{val: _num, targ_x: _pos[0], targ_y: _pos[1], hspeed: (_pos[0]- _x)*4 / game_get_speed(gamespeed_fps), vspeed: (_pos[1] - _y)*4 / game_get_speed(gamespeed_fps)});
 	
 }
 
@@ -67,9 +67,16 @@ function clear_cards(pts,_player){
 			case 3: _x = 1305; break;
 			default: _x = 0; break;		
 		}
-		layer_add_instance("Flying",id)
-		hspeed = (_x - x)*3 / game_get_speed(gamespeed_fps)
-		vspeed = (room_height - y)*3 / game_get_speed(gamespeed_fps)
-		alarm[3] = game_get_speed(gamespeed_fps) / 3
+		
+		remove_cards(_x,room_height)
 	}
+}
+
+function remove_cards(_x,_y){
+		targ_x = _x
+		targ_y = _y
+		layer_add_instance("Flying",id)
+		hspeed = (_x - x)*4 / game_get_speed(gamespeed_fps)
+		vspeed = (room_height - y)*4 / game_get_speed(gamespeed_fps)
+		alarm[3] = game_get_speed(gamespeed_fps) / 4
 }

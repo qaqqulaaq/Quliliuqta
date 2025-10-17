@@ -20,6 +20,8 @@ if room = rm_game{
 		draw_set_font(global.cardnumfont)
 		draw_text(x+_sc*(3-_deckheight),y+sprite_height-_sc*(40+_deckheight), string(disp_deck))
 	}
+
+if global.gametimer > 0{
 	draw_set_font(global.pointfont)
 	draw_set_valign(fa_top)
 	if alarm[2] > 180 or alarm[2] <= 0 draw_set_color(c_white)
@@ -29,7 +31,7 @@ if room = rm_game{
 		if alarm[0] > 0 draw_text(x,y+sprite_height, K00)
 		else draw_text(x,y+sprite_height,point_convert(global.gametimer))
 		
-	}
-	
+	}	
+}
 	
 }

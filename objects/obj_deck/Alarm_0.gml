@@ -1,6 +1,22 @@
 /// @description Change the turn and check if the player gets points
 // You can write your code in this editor
 
+if instance_number(obj_parcard) == 14 and val_selected != global.gamegoal{
+	if fail_counter > 2 {
+				
+		deck_shuffle();
+	}
+	else{
+		fail_counter += 1
+		var _restock = [];
+		with obj_parcard{
+			array_push(_restock, val);
+			instance_destroy(self);
+		}
+		deck_list = array_concat(deck_list,_restock)
+		deck_list = array_shuffle(deck_list)
+	}
+}
 
 if obj_deck.val_selected == global.gamegoal clear_cards(num_selected,turn);
 

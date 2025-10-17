@@ -5,12 +5,12 @@
 
 if player_active and pressed and (!has_drawn or !has_drawn2) {
 	
+	with obj_parcard selected = false;
 	player_active = false
 	alarm[1] = game_get_speed(gamespeed_fps) div 2
 	
 	if !has_drawn with end_id {
 		has_drawn = true
-		sprite_timer = 7
 		timer_dir = -1
 	}	
 	
