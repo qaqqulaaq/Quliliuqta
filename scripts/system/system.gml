@@ -12,6 +12,8 @@ global.gamemode = "Quliliuqta!"
 global.gamegoal = 10
 global.num_of_players = 2;
 global.gametimer = 0
+global.touchmode = true
+
 
 randomize();
 
@@ -40,29 +42,28 @@ randomize();
 #macro K18 chr(57362)
 #macro K19 chr(57363)
 
-
-global.numname[20] = "iñuññaq"
-global.numname[19] = "iñuññaġutaiḷaq"
-global.numname[18] = "akimiaq\npiŋasut"
-global.numname[17] = "akimiaq\nmalġuk"
-global.numname[16] = "akimiaq\natausiq"
-global.numname[15] = "akimiaq"
-global.numname[14] = "akimiaġutaiḷaq"
-global.numname[13] = "qulit\npiŋasut"
-global.numname[12] = "qulit\nmalġuk"
-global.numname[11] = "qulit\natausiq"
-global.numname[10] = "qulit"
-global.numname[9] = "quliŋŋġutaiḷaq"
-global.numname[8] = "tallimat\npiŋasut"
-global.numname[7] = "tallimat\nmalġuk"
-global.numname[6] = "itchaksrat"
-global.numname[5] = "tallimat"
-global.numname[4] = "sisamat"
-global.numname[3] = "piŋasut"
-global.numname[2] = "malġuk"
-global.numname[1] = "atausiq"
-global.numname[0] = "suitchuq"
-
+global.numnamearr = array_create(21,[])
+global.numnamearr[0] = [["suit","chuq"]]
+global.numnamearr[1] = [["a","tau","siq"]]
+global.numnamearr[2] = [["mal","ġuk"]]
+global.numnamearr[3] = [["pi","ŋa","sut"]]
+global.numnamearr[4] = [["si","sa","mat"]]
+global.numnamearr[5] = [["tal","lim","at"]]
+global.numnamearr[6] = [["it","chak","srat"]]
+global.numnamearr[7] = [global.numnamearr[5][0],global.numnamearr[2][0]]
+global.numnamearr[8] = [global.numnamearr[5][0],global.numnamearr[3][0]]
+global.numnamearr[9] = [["qu","liŋ","ŋu","ġu","tai","ḷaq"]]
+global.numnamearr[10] = [["qu","lit"]]
+global.numnamearr[11] = [global.numnamearr[10][0],global.numnamearr[1][0]]
+global.numnamearr[12] = [global.numnamearr[10][0],global.numnamearr[2][0]]
+global.numnamearr[13] = [global.numnamearr[10][0],global.numnamearr[3][0]]
+global.numnamearr[14] = [["a","ki","mia","ġu","tai","ḷaq"]]
+global.numnamearr[15] = [["a","ki","miaq"]]
+global.numnamearr[16] = [global.numnamearr[15][0],global.numnamearr[1][0]]
+global.numnamearr[17] = [global.numnamearr[15][0],global.numnamearr[2][0]]
+global.numnamearr[18] = [global.numnamearr[15][0],global.numnamearr[3][0]]
+global.numnamearr[19] = [["i","ñuiñ","ña","ġu","tai","ḷaq"]]
+global.numnamearr[20] = [["i","ñuiñ","ñaq"]]
 
 function font_set(){
 	switch global.winscale{

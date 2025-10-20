@@ -14,7 +14,10 @@
     "name":"menu_objects",
     "path":"folders/Objects/Touchables/menu_objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_parbutton",
+    "path":"objects/obj_parbutton/obj_parbutton.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

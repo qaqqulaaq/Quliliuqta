@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"system",
+  "%Name":"start_turn",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"system",
+  "name":"start_turn",
   "parent":{
-    "name":"system",
-    "path":"folders/Scripts/system.yy",
+    "name":"deck controls",
+    "path":"folders/Scripts/controls/deck controls.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,4 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-room_goto(rm_game_mp)
+sprite_timer = 0
+timer_dir = -1

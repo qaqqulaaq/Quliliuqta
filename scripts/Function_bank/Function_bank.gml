@@ -16,7 +16,7 @@ function deck_shuffle(_takeaway = []){
 		
 	if global.gamegoal == 5 repeat 6 array_push(deck_list,0,1,1,1,2,2,3,3,4,5)
 	else if global.gamegoal == 10 repeat 3 array_push(deck_list, 0,1,1,1,2,2,3,3,3,4,4,5,5,6,6,7,7,8,9,10)
-	else if global.gamegoal == 20 repeat 3 array_push(deck_list, 0,1,1,2,2,3,3,4,4,5,5,5,5,6,7,10,10,15,15,20)
+	else if global.gamegoal == 20 repeat 2 array_push(deck_list, 0,1,1,2,2,3,3,4,4,5,5,5,5,6,7,8,9,10,10,11,12,13,14,15,15,16,17,18,19,20)
 
 	
 	for (var _i = 0; _i < array_length(_takeaway); _i++){
@@ -51,7 +51,14 @@ function point_convert(_num){
 	
 }
 
-
+function unselect_all(){
+	with obj_parcard selected = false
+	with obj_deck{
+		num_selected = 0	
+		val_selected = 0
+	}
+	
+}
 
 //clears the cards. Must be called with obj_deck
 

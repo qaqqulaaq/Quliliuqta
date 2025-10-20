@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"end_turn",
   "parent":{
-    "name":"controls",
-    "path":"folders/Scripts/controls.yy",
+    "name":"deck controls",
+    "path":"folders/Scripts/controls/deck controls.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

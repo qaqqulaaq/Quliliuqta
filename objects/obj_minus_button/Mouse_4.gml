@@ -7,4 +7,5 @@ if global.gametimer > 0 {
 	sprite_timer = 0
 		alarm[0] = game_get_speed(gamespeed_fps) div 3
 	global.gametimer -= 5
+	obj_add_button.timer_dir = -1
 }
