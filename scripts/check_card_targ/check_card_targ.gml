@@ -60,6 +60,7 @@ function check_card(_goal){
 				for (var _k = 0; _k < array_length(_checkarray[_i]); _k++){
 					_returnarray[_k] += _checkarray[_i][_k]
 				}
+				unselect_all();
 				comp_select(_returnarray);
 				return true;	
 			}	

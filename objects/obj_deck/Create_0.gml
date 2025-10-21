@@ -17,7 +17,9 @@ deck_shuffle();
 disp_deck = point_convert(array_length(deck_list))
 
 
+won_round = 0
 can_click = true
+solo_pts = 0
 disp_pts = K00
 turn = -1
 if room = rm_game_mp alarm[0] = 10

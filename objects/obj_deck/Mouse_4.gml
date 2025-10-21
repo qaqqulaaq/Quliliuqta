@@ -17,10 +17,22 @@ if room == rm_game_mp{
 
 //in single player mode, a card is drawn without a separate button object
 else if can_click{
-	//the start turn and end turn resolve nearly quickly
-	start_turn(15)
-	//The end of the turn is initiated at the same time
+	//The player cannot act until the actions are resolved
 	can_click = false;
+	//Go through the same start_turn script as multiplayer if the computer cannot find a card combination to steal
+	
+	if val_selected == global.gamegoal {
+		won_round = true
+		alarm[1] = game_get_speed(gamespeed_fps)
+	}
+	//else if !check_card(global.gamegoal) {
+	else{
+		alarm[0] = game_get_speed(gamespeed_fps) div 2
+		start_turn_single()	
+		if instance_number(obj_parcard) >= 16 with obj_parcard remove_cards(obj_deck.x,obj_deck.y,false)
+	}
+
+
 	
 
 	//the computer player is checked. If it is not checked, the computer selects and removes cards.

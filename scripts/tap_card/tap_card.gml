@@ -4,7 +4,7 @@ function tap_card(){
 
 	if obj_deck.alarm[0] <= 0{
 		if set{
-		
+			
 			var _check = false
 			with obj_draw_button {
 				if has_drawn {
@@ -13,7 +13,7 @@ function tap_card(){
 				}
 			}
 		
-			if _check{		
+			if _check or room == rm_game_sp{		
 				if selected {
 					selected = false
 					obj_deck.num_selected -= 1

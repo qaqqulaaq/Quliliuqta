@@ -19,40 +19,42 @@ function start_turn(_maxcards){
 		}
 	}
 
-	if obj_deck.val_selected == global.gamegoal clear_cards(num_selected,turn);
-
-	unselect_all()
+	
 
 
 	//the specific function for multiplayer is run if appropriate
 	
 	if room == rm_game_mp start_turn_multiplayer();
-	else if room == rm_game_sp start_turn_single();
+	else if room == rm_game_sp can_click = true
+	
+	unselect_all()
 }
 
 function start_turn_single(){
 	
 	//first the computer checks the cards to see if a goal is met
-	if !check_card(global.gamegoal) {
-		alarm[2] = game_get_speed(gamespeed_fps) div 2
+	//if !check_card(global.gamegoal) {
+	//	alarm[2] = game_get_speed(gamespeed_fps) div 2
 	
-		with obj_deck{
+	with obj_deck{
 		//if global.gametimer and !_timer_check alarm[2] = (global.gametimer)*game_get_speed(gamespeed_fps)-1;
 		if array_length(deck_list) == 0 {
 			var _takeaway = []
 			with obj_parcard array_push(_takeaway,val)
 		
 			deck_shuffle(_takeaway);
-			_id.alarm[0] = game_get_speed(gamespeed_fps) div 2
+			//alarm[0] = game_get_speed(gamespeed_fps) div 2
 		}
 	//Otherwise, a card is drawn
-		else draw_card(array_pop(deck_list));
+		draw_card(array_pop(deck_list));
 		disp_deck = point_convert(array_length(deck_list))
-		}
 	}
 }
 
+
 function start_turn_multiplayer(){
+	
+	if obj_deck.val_selected == global.gamegoal clear_cards(num_selected,turn);
 	
 	if turn < instance_number(obj_player_stats) - 1 turn++
 	else turn = 0

@@ -4,9 +4,17 @@
 function draw_card(_num){
 	
 	//y = 32 if less than 4, 208 if greater than 4; x = 16 + 112*num of cards - 1 
-	var _pos = card_place()
-	var _x = 320*global.winscale
-	var _y = 230*global.winscale
+	if room = rm_game_mp{
+		var _pos = card_place_mp()
+		var _x = 320*global.winscale
+		var _y = 230*global.winscale
+	}
+	
+	else{
+		var _pos = card_place_sp()
+		var _x = 560*global.winscale
+		var _y = 225*global.winscale
+	}
 	
 	instance_create_layer(_x,_y,"Flying",obj_parcard,{val: _num, targ_x: _pos[0], targ_y: _pos[1], hspeed: (_pos[0]- _x)*4 / game_get_speed(gamespeed_fps), vspeed: (_pos[1] - _y)*4 / game_get_speed(gamespeed_fps)});
 	
@@ -28,7 +36,7 @@ function position_card(){
 	}
 }
 
-function card_place(){
+function card_place_mp(){
 		var _x = 80*global.winscale;
 		var _y = 32*global.winscale;
 		
@@ -52,7 +60,37 @@ function card_place(){
 		return [_x,_y];
 }
 
-function clear_cards(pts,_player){
+
+function card_place_sp(){
+		var _x = 60*global.winscale;
+		var _y = 30*global.winscale;
+		
+		var _cards = -1;
+		
+		while position_meeting(_x,_y,obj_parcard){
+			_cards += 1
+		
+			if _cards > 9 {
+				_y = 240*global.winscale;
+				_x = (60 + 90*(_cards - 10))*global.winscale;
+			}
+	
+			else if _cards > 4 {
+				_y = 135*global.winscale;
+				_x = (60 + 90*(_cards - 5))*global.winscale;
+			}
+	
+			else {		
+				_x = (60 + 90*(_cards))*global.winscale
+			}
+		
+		}
+		
+		return [_x,_y];
+}
+
+
+function clear_cards(pts,_player = 0){
 	fail_counter = 0;
 	with obj_player_stats if _player == player_num{
 		player_score += pts
@@ -72,11 +110,23 @@ function clear_cards(pts,_player){
 	}
 }
 
-function remove_cards(_x,_y){
+function clear_cards_solo(_pts){
+	fail_counter = 0
+	var _y = 0
+	if _pts == 0  _y = -75*global.winscale
+	else{
+		solo_pts += _pts
+		disp_pts = point_convert(solo_pts);
+		_y = room_height
+	}	
+	with obj_parcard if selected remove_cards(room_width div 2, _y)
+}
+
+function remove_cards(_x,_y = room_height, _destroy = true){
 		targ_x = _x
 		targ_y = _y
 		layer_add_instance("Flying",id)
 		hspeed = (_x - x)*4 / game_get_speed(gamespeed_fps)
-		vspeed = (room_height - y)*4 / game_get_speed(gamespeed_fps)
-		alarm[3] = game_get_speed(gamespeed_fps) / 4
+		vspeed = (_y - y)*4 / game_get_speed(gamespeed_fps)
+		if _destroy alarm[3] = game_get_speed(gamespeed_fps) / 4
 }

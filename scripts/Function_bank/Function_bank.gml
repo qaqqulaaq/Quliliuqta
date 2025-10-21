@@ -80,7 +80,7 @@ function comp_select(_array){
 			}
 		}
 	}
-	with obj_deck alarm[0] = 5 + _timeadj*game_get_speed(gamespeed_fps) div 2;
+	with obj_deck alarm[1] = 5 + _timeadj*game_get_speed(gamespeed_fps) div 2;
 }
 
 

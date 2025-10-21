@@ -1,7 +1,7 @@
 //This function should only be called in multiplayer mode.
 function end_turn(){
 	//At the end of the turn, if there are 14 cards in play, they will be destroyed unless the correct value is selected.
-	if instance_number(obj_parcard) >= 14 and obj_deck.val_selected != global.gamegoal with obj_parcard remove_cards(obj_deck.x,obj_deck.y)
+	if instance_number(obj_parcard) >= 14 and obj_deck.val_selected != global.gamegoal with obj_parcard remove_cards(obj_deck.x,obj_deck.y, false)
 	
 	with obj_deck{
 		alarm[2] = 0
