@@ -20,8 +20,8 @@
 	if _deckheight > 0{
 		draw_set_font(global.cardnumfont)
 		if global.gamegoal == 20  draw_text(x+_sc*(3-_deckheight),y+sprite_height-_sc*(40+_deckheight), K20)
-		else draw_text(x+_sc*(3-_deckheight),y+sprite_height-_sc*(40+_deckheight), disp_deck)
-		//else draw_text(x+_sc*(3-_deckheight),y+sprite_height-_sc*(40+_deckheight), chr(KB + global.gamegoal))
+		//else draw_text(x+_sc*(3-_deckheight),y+sprite_height-_sc*(40+_deckheight), disp_deck)
+		else draw_text(x+_sc*(3-_deckheight),y+sprite_height-_sc*(40+_deckheight), chr(KB + global.gamegoal))
 	}
 	
 //draw the timer based on the value of alarm[2]

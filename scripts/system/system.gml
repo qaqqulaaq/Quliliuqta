@@ -13,7 +13,7 @@ global.gamegoal = 10
 global.num_of_players = 2;
 global.gametimer = 0
 global.touchmode = true
-
+global.vscomp = false
 
 randomize();
 

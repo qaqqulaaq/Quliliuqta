@@ -2,21 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function start_turn(_maxcards){
 	if instance_number(obj_parcard) >= _maxcards and val_selected != global.gamegoal{
-		//If the deck has been traversed three times already, the deck resets
-		if fail_counter > 2 {			
-			deck_shuffle();
-		}
-		//Otherwise, the cards are returned to the deck, which is shuffled without placing old cards back in
-		else{
-			fail_counter += 1
-			var _restock = [];
-			with obj_parcard{
-				array_push(_restock, val);
-				instance_destroy(self);
-			}
-			deck_list = array_concat(deck_list,_restock)
-			deck_list = array_shuffle(deck_list)
-		}
+	clear_table()
 	}
 
 	
@@ -46,7 +32,7 @@ function start_turn_single(){
 			//alarm[0] = game_get_speed(gamespeed_fps) div 2
 		}
 	//Otherwise, a card is drawn
-		draw_card(array_pop(deck_list));
+		if instance_number(obj_parcard) < 15 draw_card(array_pop(deck_list));
 		disp_deck = point_convert(array_length(deck_list))
 	}
 }
@@ -72,4 +58,23 @@ function start_turn_multiplayer(){
 		has_drawn = false; 
 		break
 	}
+}
+
+function clear_table(){
+	//If the deck has been traversed three times already, the deck resets
+		if fail_counter > 2 {			
+			deck_shuffle();
+		}
+		//Otherwise, the cards are returned to the deck, which is shuffled without placing old cards back in
+		else{
+			fail_counter += 1
+			var _restock = [];
+			with obj_parcard{
+				array_push(_restock, val);
+				instance_destroy(self);
+			}
+			deck_list = array_concat(deck_list,_restock)
+			deck_list = array_shuffle(deck_list)
+		}
+		disp_deck = point_convert(array_length(deck_list))
 }

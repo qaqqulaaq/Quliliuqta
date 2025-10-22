@@ -22,6 +22,7 @@ can_click = true
 solo_pts = 0
 disp_pts = K00
 turn = -1
+topped = false
 if room = rm_game_mp alarm[0] = 10
 
 tempmap = ""

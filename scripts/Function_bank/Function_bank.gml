@@ -10,7 +10,7 @@ function deck_shuffle(_takeaway = []){
 	val_selected = 0
 
 	deck_list = []
-
+	fail_counter = 0
 	
 
 		
