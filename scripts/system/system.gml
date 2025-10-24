@@ -14,6 +14,8 @@ global.num_of_players = 2;
 global.gametimer = 0
 global.touchmode = true
 global.vscomp = false
+global.dialect = "NSC"
+
 
 randomize();
 
@@ -42,28 +44,9 @@ randomize();
 #macro K18 chr(57362)
 #macro K19 chr(57363)
 
+
 global.numnamearr = array_create(21,[])
-global.numnamearr[0] = [["suit","chuq"]]
-global.numnamearr[1] = [["a","tau","siq"]]
-global.numnamearr[2] = [["mal","ġuk"]]
-global.numnamearr[3] = [["pi","ŋa","sut"]]
-global.numnamearr[4] = [["si","sa","mat"]]
-global.numnamearr[5] = [["tal","lim","at"]]
-global.numnamearr[6] = [["it","chak","srat"]]
-global.numnamearr[7] = [global.numnamearr[5][0],global.numnamearr[2][0]]
-global.numnamearr[8] = [global.numnamearr[5][0],global.numnamearr[3][0]]
-global.numnamearr[9] = [["qu","liŋ","ŋu","ġu","tai","ḷaq"]]
-global.numnamearr[10] = [["qu","lit"]]
-global.numnamearr[11] = [global.numnamearr[10][0],global.numnamearr[1][0]]
-global.numnamearr[12] = [global.numnamearr[10][0],global.numnamearr[2][0]]
-global.numnamearr[13] = [global.numnamearr[10][0],global.numnamearr[3][0]]
-global.numnamearr[14] = [["a","ki","mia","ġu","tai","ḷaq"]]
-global.numnamearr[15] = [["a","ki","miaq"]]
-global.numnamearr[16] = [global.numnamearr[15][0],global.numnamearr[1][0]]
-global.numnamearr[17] = [global.numnamearr[15][0],global.numnamearr[2][0]]
-global.numnamearr[18] = [global.numnamearr[15][0],global.numnamearr[3][0]]
-global.numnamearr[19] = [["i","ñuiñ","ña","ġu","tai","ḷaq"]]
-global.numnamearr[20] = [["i","ñuiñ","ñaq"]]
+dialect_set("PHO")
 
 function font_set(){
 	switch global.winscale{
@@ -86,4 +69,67 @@ function font_set(){
 			global.pointfont = fnt_points_3
 			break;
 	}
+}
+
+function dialect_set(_dia = "NSC"){
+
+
+	switch _dia{
+		case "NSC":
+			global.numnamearr[0] = [["suit","chuq"]]
+			global.numnamearr[1] = [["a","tau","siq"]]
+			global.numnamearr[2] = [["mal","ġuk"]]
+			global.numnamearr[3] = [["pi","ŋa","sut"]]
+			global.numnamearr[4] = [["si","sa","mat"]]
+			global.numnamearr[5] = [["tal","lim","at"]]
+			global.numnamearr[6] = [["it","chak","srat"]]
+
+			global.numnamearr[9] = [["qu","liŋ","ŋu","ġu","tai","ḷaq"]]
+			global.numnamearr[10] = [["qu","lit"]]
+
+		break;
+
+		case "AKP":
+			global.numnamearr[0] = [["huit","chuq"]]
+			global.numnamearr[1] = [["a","tau","hiq"]]
+			global.numnamearr[2] = [["mal","ġuk"]]
+			global.numnamearr[3] = [["pi","ŋa","hut"]]
+			global.numnamearr[4] = [["hi","ha","mat"]]
+			global.numnamearr[5] = [["tal","lim","at"]]
+			global.numnamearr[6] = [["it","chak","srat"]]
+
+			global.numnamearr[9] = [["qu","liŋ","ŋu","ġu","tai","ḷaq"]]
+			global.numnamearr[10] = [["qu","lit"]]
+
+
+		break;
+
+		case "PHO":
+			global.numnamearr[0] = [["suu","ŋi","ḷaq"]]
+			global.numnamearr[1] = [["a","tau","siq"]]
+			global.numnamearr[2] = [["mal","ġuk"]]
+			global.numnamearr[3] = [["pi","ŋa","suy"]]
+			global.numnamearr[4] = [["si","sa","maiy"]]
+			global.numnamearr[5] = [["tal","lim","aiy"]]
+			global.numnamearr[6] = [["it","chak","sraiy"]]
+
+			global.numnamearr[9] = [["qu","liŋ","ŋu","ġu","tai","ḷaq"]]
+			global.numnamearr[10] = [["qu","liiy"]]
+
+		break;
+	}
+	
+	global.numnamearr[7] = [global.numnamearr[5][0],global.numnamearr[2][0]]
+	global.numnamearr[8] = [global.numnamearr[5][0],global.numnamearr[3][0]]
+	global.numnamearr[11] = [global.numnamearr[10][0],global.numnamearr[1][0]]
+	global.numnamearr[12] = [global.numnamearr[10][0],global.numnamearr[2][0]]
+	global.numnamearr[13] = [global.numnamearr[10][0],global.numnamearr[3][0]]
+	global.numnamearr[14] = [["a","ki","mia","ġu","tai","ḷaq"]]
+	global.numnamearr[15] = [["a","ki","miaq"]]
+	global.numnamearr[16] = [global.numnamearr[15][0],global.numnamearr[1][0]]
+	global.numnamearr[17] = [global.numnamearr[15][0],global.numnamearr[2][0]]
+	global.numnamearr[18] = [global.numnamearr[15][0],global.numnamearr[3][0]]
+	global.numnamearr[19] = [["i","ñuiñ","ña","ġu","tai","ḷaq"]]
+	global.numnamearr[20] = [["i","ñuiñ","ñaq"]]
+	
 }
