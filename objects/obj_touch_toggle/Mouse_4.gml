@@ -4,7 +4,7 @@
 
 timer_dir = 1
 if label == "Off" global.touchmode = false;
-else global.vscomp = true;
+else global.touchmode = true;
 
 
 

@@ -14,7 +14,7 @@ global.gamemode = "Quliliuqta!"
 global.gamegoal = 10
 global.num_of_players = 2;
 global.gametimer = 0
-global.touchmode = true
+global.touchmode = false
 global.vscomp = true
 global.dialect = "North Slope Coastal"
 

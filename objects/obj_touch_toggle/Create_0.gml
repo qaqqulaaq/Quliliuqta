@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 
-if label == "Off" {
+if label == "Off" and !global.touchmode or label == "On" and global.touchmode {
 	timer_dir = 1	
 	sprite_timer = 7
 }
