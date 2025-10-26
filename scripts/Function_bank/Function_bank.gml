@@ -13,8 +13,8 @@ function deck_shuffle(_takeaway = []){
 	fail_counter = 0
 	
 
-		
-	if global.gamegoal == 5 repeat 6 array_push(deck_list,0,1,1,1,2,2,3,3,4,5)
+	if room == rm_game_sp_tutorial repeat 4 array_push(deck_list,1,1,3,4,1,2,0,3,1,2,0,0,5,0,0)	
+	else if global.gamegoal == 5 repeat 6 array_push(deck_list,0,1,1,1,2,2,3,3,4,5)
 	else if global.gamegoal == 10 repeat 3 array_push(deck_list, 0,1,1,1,2,2,3,3,3,4,4,5,5,6,6,7,7,8,9,10)
 	else if global.gamegoal == 20 repeat 2 array_push(deck_list, 0,1,1,2,2,3,3,4,4,5,5,5,5,6,7,8,9,10,10,11,12,13,14,15,15,16,17,18,19,20)
 

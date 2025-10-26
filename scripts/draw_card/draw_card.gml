@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function draw_card(_num){
+function draw_card(_num,_tut = false){
 	
 	var _x;
 	var _y;
@@ -13,12 +13,13 @@ function draw_card(_num){
 	}
 	
 	else{
-		_pos = card_place_sp()
+		_pos = card_place_sp(_tut)
 		_x = 560*global.winscale
 		_y = 225*global.winscale
 	}
 	
-	instance_create_layer(_x,_y,"Flying",obj_parcard,{val: _num, targ_x: _pos[0], targ_y: _pos[1], hspeed: (_pos[0]- _x)*4 / game_get_speed(gamespeed_fps), vspeed: (_pos[1] - _y)*4 / game_get_speed(gamespeed_fps)});
+	if !_tut instance_create_layer(_x,_y,"Flying",obj_parcard,{val: _num, targ_x: _pos[0], targ_y: _pos[1], hspeed: (_pos[0]- _x)*4 / game_get_speed(gamespeed_fps), vspeed: (_pos[1] - _y)*4 / game_get_speed(gamespeed_fps)});
+	else instance_create_layer(_x,_y,"Flying",obj_parcard_tutorial,{val: _num, targ_x: _pos[0], targ_y: _pos[1], hspeed: (_pos[0]- _x)*4 / game_get_speed(gamespeed_fps), vspeed: (_pos[1] - _y)*4 / game_get_speed(gamespeed_fps)});
 }
 
 function remote_draw(){

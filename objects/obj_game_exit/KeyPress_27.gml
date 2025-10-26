@@ -6,9 +6,15 @@
 
 switch room{
 	
-	case rm_game_mp: room_goto(rm_game_multioption); break;
+	case rm_game_mp: 
+	case rm_game_mp_tutorial:
+		room_goto(rm_game_multioption);
+		break;
 	
-	case rm_game_sp: room_goto(rm_game_singoption); break;
+	case rm_game_sp:
+	case rm_game_sp_tutorial:	
+		room_goto(rm_game_singoption); 
+		break;
 	
 	case rm_game_multioption:
 	case rm_game_singoption:

@@ -42,13 +42,16 @@ function card_place_mp(){
 }
 
 
-function card_place_sp(){
+function card_place_sp(_tut = false){
 		var _x = 60*global.winscale;
 		var _y = 30*global.winscale;
 		
 		var _cards = -1;
+		var _targ = obj_parcard
+		if _tut _targ = obj_parcard_tutorial
 		
-		while position_meeting(_x,_y,obj_parcard){
+		
+		while position_meeting(_x,_y,_targ){
 			_cards += 1
 		
 			if _cards > 9 {
