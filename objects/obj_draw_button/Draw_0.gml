@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Draw text and animation
 // You can write your code in this editor
 
 if !has_drawn or !has_drawn2 draw_sprite(sprite_index,sprite_timer div 2,x,y)

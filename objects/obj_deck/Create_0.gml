@@ -16,7 +16,7 @@ fail_counter = 0;
 deck_shuffle();
 disp_deck = point_convert(array_length(deck_list))
 
-
+sp_remove = false
 won_round = 0
 can_click = true
 solo_pts = 0

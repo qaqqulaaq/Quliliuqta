@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Release Button
 // You can write your code in this editor
 
 timer_dir = -1

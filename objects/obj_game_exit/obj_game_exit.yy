@@ -13,8 +13,8 @@
   "name":"obj_game_exit",
   "overriddenProperties":[],
   "parent":{
-    "name":"menu_objects",
-    "path":"folders/Objects/Touchables/menu_objects.yy",
+    "name":"game_objects",
+    "path":"folders/Objects/Touchables/game_objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

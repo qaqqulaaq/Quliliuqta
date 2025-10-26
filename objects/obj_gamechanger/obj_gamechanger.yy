@@ -11,8 +11,8 @@
   "name":"obj_gamechanger",
   "overriddenProperties":[],
   "parent":{
-    "name":"menu_objects",
-    "path":"folders/Objects/Touchables/menu_objects.yy",
+    "name":"shared",
+    "path":"folders/Objects/Touchables/menu_objects/shared.yy",
   },
   "parentObjectId":{
     "name":"obj_ui_parent",

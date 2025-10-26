@@ -1,27 +1,19 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function start_turn(_maxcards){
-	if instance_number(obj_parcard) >= _maxcards and val_selected != global.gamegoal{
-	clear_table()
-	}
-
-	
-
 
 	//the specific function for multiplayer is run if appropriate
 	
-	if room == rm_game_mp start_turn_multiplayer();
+	if room == rm_game_mp start_turn_multiplayer(_maxcards);
 	else if room == rm_game_sp can_click = true
-	
 	unselect_all()
+	
+	
 }
 
 function start_turn_single(){
 	
-	//first the computer checks the cards to see if a goal is met
-	//if !check_card(global.gamegoal) {
-	//	alarm[2] = game_get_speed(gamespeed_fps) div 2
-	
+
 	with obj_deck{
 		//if global.gametimer and !_timer_check alarm[2] = (global.gametimer)*game_get_speed(gamespeed_fps)-1;
 		if array_length(deck_list) == 0 {
@@ -29,7 +21,6 @@ function start_turn_single(){
 			with obj_parcard array_push(_takeaway,val)
 		
 			deck_shuffle(_takeaway);
-			//alarm[0] = game_get_speed(gamespeed_fps) div 2
 		}
 	//Otherwise, a card is drawn
 		if instance_number(obj_parcard) < 15 draw_card(array_pop(deck_list));
@@ -38,8 +29,12 @@ function start_turn_single(){
 }
 
 
-function start_turn_multiplayer(){
+function start_turn_multiplayer(_maxcards){
 	
+	if instance_number(obj_parcard) >= _maxcards and val_selected != global.gamegoal{
+		clear_table()
+	}
+
 	if obj_deck.val_selected == global.gamegoal clear_cards(num_selected,turn);
 	
 	if turn < instance_number(obj_player_stats) - 1 turn++

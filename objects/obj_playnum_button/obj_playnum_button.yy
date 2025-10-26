@@ -11,8 +11,8 @@
   "name":"obj_playnum_button",
   "overriddenProperties":[],
   "parent":{
-    "name":"menu_objects",
-    "path":"folders/Objects/Touchables/menu_objects.yy",
+    "name":"multiplayer",
+    "path":"folders/Objects/Touchables/menu_objects/multiplayer.yy",
   },
   "parentObjectId":{
     "name":"obj_parbutton",

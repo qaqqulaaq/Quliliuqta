@@ -2,23 +2,28 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 
-//set to 2 if loading HTML
+randomize();
+
+//Sets the resolution, should be set to 2 if loading HTML
 global.winscale = 3;
 font_set();
 
-////////Uncomment when using an HTML Version
 
+//Default game options
 global.gamemode = "Quliliuqta!"
 global.gamegoal = 10
 global.num_of_players = 2;
 global.gametimer = 0
 global.touchmode = true
-global.vscomp = false
-global.dialect = "NSC"
+global.vscomp = true
+global.dialect = "North Slope Coastal"
+
+//Sets the words used on the cards based off of the dialect
+global.numnamearr = array_create(21,[])
+dialect_set(global.dialect)
 
 
-randomize();
-
+//used to write Kaktovik Numerals
 #macro KB 57344
 #macro K20 chr(57345)+chr(57344)
 
@@ -45,9 +50,8 @@ randomize();
 #macro K19 chr(57363)
 
 
-global.numnamearr = array_create(21,[])
-dialect_set("PHO")
 
+//Sets the appropriate font based on the resolution
 function font_set(){
 	switch global.winscale{
 		
@@ -71,56 +75,56 @@ function font_set(){
 	}
 }
 
-function dialect_set(_dia = "NSC"){
-
+//Will be used to select the dialogue
+function dialect_set(_dia = "North Slope Coastal"){
 
 	switch _dia{
-		case "NSC":
+		case "North Slope Coastal":
 			global.numnamearr[0] = [["suit","chuq"]]
 			global.numnamearr[1] = [["a","tau","siq"]]
-			global.numnamearr[2] = [["mal","ġuk"]]
+
 			global.numnamearr[3] = [["pi","ŋa","sut"]]
 			global.numnamearr[4] = [["si","sa","mat"]]
 			global.numnamearr[5] = [["tal","lim","at"]]
 			global.numnamearr[6] = [["it","chak","srat"]]
 
-			global.numnamearr[9] = [["qu","liŋ","ŋu","ġu","tai","ḷaq"]]
 			global.numnamearr[10] = [["qu","lit"]]
 
 		break;
 
-		case "AKP":
+		case "Anaktuvuk Pass":
 			global.numnamearr[0] = [["huit","chuq"]]
 			global.numnamearr[1] = [["a","tau","hiq"]]
-			global.numnamearr[2] = [["mal","ġuk"]]
+
 			global.numnamearr[3] = [["pi","ŋa","hut"]]
 			global.numnamearr[4] = [["hi","ha","mat"]]
 			global.numnamearr[5] = [["tal","lim","at"]]
 			global.numnamearr[6] = [["it","chak","srat"]]
 
-			global.numnamearr[9] = [["qu","liŋ","ŋu","ġu","tai","ḷaq"]]
 			global.numnamearr[10] = [["qu","lit"]]
 
 
 		break;
 
-		case "PHO":
+		case "Point Hope":
 			global.numnamearr[0] = [["suu","ŋi","ḷaq"]]
 			global.numnamearr[1] = [["a","tau","siq"]]
-			global.numnamearr[2] = [["mal","ġuk"]]
+
 			global.numnamearr[3] = [["pi","ŋa","suy"]]
 			global.numnamearr[4] = [["si","sa","maiy"]]
 			global.numnamearr[5] = [["tal","lim","aiy"]]
 			global.numnamearr[6] = [["it","chak","sraiy"]]
 
-			global.numnamearr[9] = [["qu","liŋ","ŋu","ġu","tai","ḷaq"]]
+
 			global.numnamearr[10] = [["qu","liiy"]]
 
 		break;
 	}
 	
+	global.numnamearr[2] = [["mal","ġuk"]]	
 	global.numnamearr[7] = [global.numnamearr[5][0],global.numnamearr[2][0]]
 	global.numnamearr[8] = [global.numnamearr[5][0],global.numnamearr[3][0]]
+	global.numnamearr[9] = [["qu","liŋ","ŋu","ġu","tai","ḷaq"]]
 	global.numnamearr[11] = [global.numnamearr[10][0],global.numnamearr[1][0]]
 	global.numnamearr[12] = [global.numnamearr[10][0],global.numnamearr[2][0]]
 	global.numnamearr[13] = [global.numnamearr[10][0],global.numnamearr[3][0]]

@@ -13,8 +13,8 @@
   "name":"obj_parbutton",
   "overriddenProperties":[],
   "parent":{
-    "name":"menu_objects",
-    "path":"folders/Objects/Touchables/menu_objects.yy",
+    "name":"shared",
+    "path":"folders/Objects/Touchables/menu_objects/shared.yy",
   },
   "parentObjectId":null,
   "persistent":false,

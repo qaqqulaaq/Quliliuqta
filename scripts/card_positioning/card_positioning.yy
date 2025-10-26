@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"card_positioning",
   "parent":{
-    "name":"system",
-    "path":"folders/Scripts/system.yy",
+    "name":"card controls",
+    "path":"folders/Scripts/controls/card controls.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

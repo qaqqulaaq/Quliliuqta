@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Timer and Paired End Button Variables
 // You can write your code in this editor
 
 end_id = 0;

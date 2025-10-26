@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"tap_card",
   "parent":{
-    "name":"controls",
-    "path":"folders/Scripts/controls.yy",
+    "name":"card controls",
+    "path":"folders/Scripts/controls/card controls.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
