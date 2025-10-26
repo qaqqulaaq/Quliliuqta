@@ -34,11 +34,11 @@ if error {
 	switch stage{
 	
 	
-		case 14: _text = "choose all of the cards to add\nthem up!\n\nClick the cards to choose them." break;
+		case 14: _text = "Choose all of the cards to add\nthem up!\n\nClick the cards to choose them." break;
 	
 		case 31: 
 			if _sum > 10 _text = $"These cards add up to {string(_sum)}, but we\nonly want the cards to add up to 10.\nYou can click on the "+K05+" again to\nignore it."
-			else if _sum = 0 _text = "choose some cards, then click\non the deck to see if they add\nup to 10!"
+			else if _sum = 0 _text = "Choose some cards, then click\non the deck to see if they add\nup to 10!"
 			else if _sum < 10 _text = $"These cards only add up to {string(_sum)}.\nClick more cards to get them to add\nup to 10." 
 			break;
 
