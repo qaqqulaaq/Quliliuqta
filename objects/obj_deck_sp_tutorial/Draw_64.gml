@@ -34,31 +34,31 @@ if error {
 	switch stage{
 	
 	
-		case 14: _text = "Select all of the cards to add\nthem up!\n\nClick the cards to select them." break;
+		case 14: _text = "choose all of the cards to add\nthem up!\n\nClick the cards to choose them." break;
 	
 		case 31: 
 			if _sum > 10 _text = $"These cards add up to {string(_sum)}, but we\nonly want the cards to add up to 10.\nYou can click on the "+K05+" again to\nignore it."
-			else if _sum = 0 _text = "Select some cards, then click\non the deck to see if they add\nup to 10!"
+			else if _sum = 0 _text = "choose some cards, then click\non the deck to see if they add\nup to 10!"
 			else if _sum < 10 _text = $"These cards only add up to {string(_sum)}.\nClick more cards to get them to add\nup to 10." 
 			break;
 
 		case 41:
 			if _sum == 10 _text = "These cards add up to 10, but don't\nforget the " + K00+ "!"
-			else _text = "Select all of the cards to add\nthem up!\n\nClick the cards to select them."
+			else _text = "Choose all of the cards to add\nthem up!\n\nClick the cards to choose them."
 			break;
 		
 		case 56:
-			if _sum == 0 _text = "There are enough cards to add up\n to "+K10+"! Try selecting some and\nclick on the deck again!"
+			if _sum == 0 _text = "There are enough cards to add up\n to "+K10+"! Try choosing some and\nclick on the deck again!"
 			else _text =  $"These cards only add up to {string(_sum)}."
 			break;
 		
 		case 75:
-			_text = "Click on the" + K10+ "card!"
+			_text = "Click on the " + K10+ " card!"
 			break;
 		
 		default:
-			if _sum == 0 _text =  "Select some cards, then click\non the deck to see if they add\nup to 10!"
-			else _text = $"These cards add up to {string(_sum)}."
+			if _sum == 0 _text =  "Choose some cards, then click\non the deck to see if they add\nup to 10!"
+			else _text = $"This adds up to {string(_sum)}.\n\nYou might need to change which cards you choose."
 			break;
 	}
 }
@@ -76,9 +76,9 @@ else switch stage {
 	
 	case 10: _text = $"You drew " + K02 + $", {numword[2]}! It has 2 lines,\nand is worth 2.\n\nWe're getting close! Maybe we'll\nhave 10 when we draw again!"; break;
 	
-	case 13: _text= $"It's another {numword[2]}! All of those\ncards add up to 10!\n\nClick anywhere to close this\nwindow, then click on all of the\ncards to select them!"; break;
+	case 13: _text= $"It's another {numword[2]}! All of those\ncards add up to 10!\n\nClick anywhere to close this\nwindow, then click on all of the\ncards to choose them!"; break;
 	
-	case 15: _text= $"You've selected cards that add up\nto "+ K10+"! Now click on the deck again\nto collect them!"; break;
+	case 15: _text= $"These cards all add up to "+ K10+"!\nNow click on the deck again\nto collect them!"; break;
 	
 	case 18: _text = $"You get 1 point for every card you\ncollect.\n\nYou collected 4 cards, so now you\nhave " + K04 + " points! Click the deck to\ndraw again."; break;
 	
@@ -97,9 +97,9 @@ else switch stage {
 	case 40: _text = $"That's another {numword[5]}! Notice\nhow "+K10+" is made up of two "+K05+"?\n\nGrab them both, and don't forget\nthe "+K00+"!"; break; 
 		
 	case 44: 
-		_text = "Keep drawing until you find\nanother combination that makes " +K10+ "!\n" 	
-		if !global.touchmode _text += "If you hold the left mouse button\nand drag the cursor across the\ncards you want, you can select\nthem quickly!"
-		else _text += "If you drag across the cards you\nwant, you can select them quickly!"
+		_text = "Keep drawing until you find\nmore cards that make " +K10+ "!\n" 	
+		if !global.touchmode _text += "If you hold the left mouse button\nand drag the cursor across the\ncards you want, you can choose\nthem quickly!"
+		else _text += "If you drag across the cards you\nwant, you can choose them quickly!"
 		break;
 		
 	case 59: _text = "Next, let's look at some bigger\ncards.\n\nClick the deck to draw!" break;
