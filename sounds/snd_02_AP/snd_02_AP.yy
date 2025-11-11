@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_02_AP",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.4628571,
+  "exportDir":"",
+  "name":"snd_02_AP",
+  "parent":{
+    "name":"Anaktuvuk Pass",
+    "path":"folders/Sounds/Anaktuvuk Pass.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_02_AP.mp3",
+  "volume":1.0,
+}
