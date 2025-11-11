@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_02_nsc",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.2277551,
+  "exportDir":"",
+  "name":"snd_02_nsc",
+  "parent":{
+    "name":"North Slope Coastal",
+    "path":"folders/Sounds/North Slope Coastal.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_02_nsc.mp3",
+  "volume":1.0,
+}
