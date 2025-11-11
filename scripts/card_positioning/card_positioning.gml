@@ -37,8 +37,8 @@ function card_place_mp(){
 			}
 		
 		}
-		
-		return [_x,_y];
+		if _cards == -1 _cards = 0
+		return [_x,_y,_cards];
 }
 
 
@@ -69,6 +69,6 @@ function card_place_sp(_tut = false){
 			}
 		
 		}
-		
-		return [_x,_y];
+		if _cards == -1 _cards = 0
+		return [_x,_y,_cards];
 }

@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"v1",
+  "%Name":"Online_Multiplayer",
+  "name":"Online_Multiplayer",
+  "parent":{
+    "name":"Notes",
+    "path":"folders/Notes.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

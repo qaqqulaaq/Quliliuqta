@@ -18,7 +18,10 @@ function draw_card(_num,_tut = false){
 		_y = 225*global.winscale
 	}
 	
-	if !_tut instance_create_layer(_x,_y,"Flying",obj_parcard,{val: _num, targ_x: _pos[0], targ_y: _pos[1], hspeed: (_pos[0]- _x)*4 / game_get_speed(gamespeed_fps), vspeed: (_pos[1] - _y)*4 / game_get_speed(gamespeed_fps)});
+	if !_tut {
+		instance_create_layer(_x,_y,"Flying",obj_parcard,{val: _num, targ_x: _pos[0], targ_y: _pos[1], position: _pos[2], hspeed: (_pos[0]- _x)*4 / game_get_speed(gamespeed_fps), vspeed: (_pos[1] - _y)*4 / game_get_speed(gamespeed_fps)});
+		with obj_deck cardlist[_pos[2]] = _num
+	}
 	else instance_create_layer(_x,_y,"Flying",obj_parcard_tutorial,{val: _num, targ_x: _pos[0], targ_y: _pos[1], hspeed: (_pos[0]- _x)*4 / game_get_speed(gamespeed_fps), vspeed: (_pos[1] - _y)*4 / game_get_speed(gamespeed_fps)});
 }
 
@@ -30,8 +33,5 @@ function remote_draw(){
 		break;
 	}
 	//if so, the player's "draw card" event is activated 
-	if _can_draw != "none" with _can_draw {
-		pressed = true
-		event_perform(ev_mouse,ev_left_release)
-	}
+	if _can_draw != "none" with _can_draw activate_button()
 }

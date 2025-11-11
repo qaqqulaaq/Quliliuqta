@@ -11,4 +11,4 @@ y = 64+ (pos) *320
 
 
 gamechange_alpha = 0.5
-if mode_set == "Qililiuqta!" gamechange_alpha = 1
+if mode_set == global.gamemode gamechange_alpha = 1

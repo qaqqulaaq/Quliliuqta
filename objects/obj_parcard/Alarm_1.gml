@@ -7,4 +7,6 @@ if !drawn {
 	alarm[1] = game_get_speed(gamespeed_fps) div 8;
 }
 
-else set = true;
+else {
+	set = true;
+}

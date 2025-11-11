@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"say_number",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"say_number",
+  "parent":{
+    "name":"system",
+    "path":"folders/Scripts/system.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -18,10 +18,20 @@
 //draw the number goal 
 //Changed from drawing the number left in the deck to limit confusion
 	if _deckheight > 0{
+		draw_text(x+_sc*(3-_deckheight),y+sprite_height-_sc*(20+_deckheight), disp_deck)
+		
 		draw_set_font(global.cardnumfont)
 		if global.gamegoal == 20  draw_text(x+_sc*(3-_deckheight),y+sprite_height-_sc*(40+_deckheight), K20)
 		//else draw_text(x+_sc*(3-_deckheight),y+sprite_height-_sc*(40+_deckheight), disp_deck)
 		else draw_text(x+_sc*(3-_deckheight),y+sprite_height-_sc*(40+_deckheight), chr(KB + global.gamegoal))
+	}
+	
+	else if room = rm_game_sp{
+		draw_set_font(global.cardtextfont);
+		draw_set_color(c_white)
+		if global.setgoal == "Decks" and decks == global.deckgoal -1 draw_text(x + _sc*(3-_deckheight), y + sprite_height div 2 + _sc*(3-_deckheight), "Click\nto\nFinish");
+		
+		else draw_text(x + _sc*(3-_deckheight), y + sprite_height div 2 + _sc*(3-_deckheight), "Click\nto\nRefresh");
 	}
 	
 //draw the timer based on the value of alarm[2]

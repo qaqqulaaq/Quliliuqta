@@ -58,7 +58,7 @@ if error {
 		
 		default:
 			if _sum == 0 _text =  "Choose some cards, then click\non the deck to see if they add\nup to 10!"
-			else _text = $"This adds up to {string(_sum)}.\n\nYou might need to change which cards you choose."
+			else _text = $"This adds up to {string(_sum)}.\n\nYou might need to change which\ncards you choose."
 			break;
 	}
 }

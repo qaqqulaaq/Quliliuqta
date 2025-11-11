@@ -4,3 +4,6 @@
 end_id = 0;
 sprite_timer = 0
 timer_dir = -1
+
+
+alarm[2] = 1

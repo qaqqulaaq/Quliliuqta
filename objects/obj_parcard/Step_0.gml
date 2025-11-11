@@ -11,3 +11,5 @@ if abs(targ_y - y) < abs(vspeed) {
 	y = targ_y
 	layer_add_instance("BelowDeck",self)
 }
+
+if not position_meeting(mouse_x,mouse_y,self) just_pressed = false;

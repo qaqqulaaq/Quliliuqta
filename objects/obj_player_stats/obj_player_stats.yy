@@ -29,9 +29,9 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"player_name","filters":[],"listItems":[],"multiselect":false,"name":"player_name","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"Player","varType":2,},
-    {"$GMObjectProperty":"v1","%Name":"player_score","filters":[],"listItems":[],"multiselect":false,"name":"player_score","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"disp_score","filters":[],"listItems":[],"multiselect":false,"name":"disp_score","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"K00","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"player_name","filters":[],"listItems":[],"multiselect":false,"name":"player_name","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"Player","varType":2,},
+    {"$GMObjectProperty":"v2","%Name":"player_score","filters":[],"listItems":[],"multiselect":false,"name":"player_score","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"disp_score","filters":[],"listItems":[],"multiselect":false,"name":"disp_score","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"K00","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

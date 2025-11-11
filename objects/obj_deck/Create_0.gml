@@ -20,9 +20,23 @@ sp_remove = false
 won_round = 0
 can_click = true
 solo_pts = 0
+comp_pts = 0
 disp_pts = K00
+comp_disp_pts = K00
 turn = -1
 topped = false
-if room = rm_game_mp alarm[0] = 10
+
+
+if room == rm_game_mp {
+	alarm[0] = 10
+	cardlist = array_create(14,-1)
+}
+
+else if room == rm_game_sp cardlist = array_create(15,-1)
+
+
+decks = 0;
+winner = ""
+game_over = false;
 
 tempmap = ""

@@ -68,11 +68,13 @@ function comp_select(_array){
 	with obj_parcard if val == 0{
 		alarm[0] = 5 + _timeadj*game_get_speed(gamespeed_fps) div 2
 		_timeadj += 1;
+		obj_deck.num_selected++
 	}
 	
 	for(var _i = array_length(_array) - 1; _i >= 0; _i--){
 		if _array[_i] > 0 with obj_parcard{
 			if val == (_i+1){
+				obj_deck.num_selected++
 				alarm[0] = 5 + _timeadj*game_get_speed(gamespeed_fps) div 2
 				_timeadj += 1;
 				_array[_i] -= 1;
@@ -87,6 +89,7 @@ function comp_select(_array){
 //returns an array with x and y to determine where the cards are supposed to go
 
 function mode_change(_goal){
+	
 	
 	if _goal == 5{
 		global.gamegoal = 5
