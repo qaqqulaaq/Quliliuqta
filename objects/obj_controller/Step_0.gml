@@ -41,7 +41,7 @@ else {
 	if keyboard_check_pressed(vk_escape) game_exit();
 	
 	//activates the deck, even if there is no pointer object
-	else if (room == rm_game_sp or room == rm_game_mp) and press_enter() deck_event();
+	else if (room == rm_game_sp or room == rm_game_mp or room == rm_game_mp_online) and press_enter() deck_event();
 	
 	//creates a pointer object if one does not exist
 	else if !instance_exists(obj_pointer) and (press_any() or global.pointeron) {

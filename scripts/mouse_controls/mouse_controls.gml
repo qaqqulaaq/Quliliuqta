@@ -17,6 +17,7 @@ function mouse_controls(){
 	//////Mouse controls in the main game		
 		case rm_game_sp:
 		case rm_game_mp:
+		case rm_game_mp_online:
 			if (mouse_check_button_pressed(mb_left) and position_meeting(mouse_x,mouse_y,obj_deck)) deck_event()
 			
 			else if (mouse_check_button_pressed(mb_left) and position_meeting(mouse_x,mouse_y,obj_player)) with instance_position(mouse_x,mouse_y,obj_player) activate_button(); 

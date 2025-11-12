@@ -16,6 +16,7 @@ function activate_pointer(){
 				break;
 				
 			case rm_game_mp:
+			case rm_game_mp_online:
 				if hpos == 0 and vpos == 2 with obj_draw_button {if player_active activate_button()}
 				else if hpos == 1 and vpos == 2 with obj_end_button {if player_active activate_button();}
 				else if position_meeting(x+5,y,obj_parcard) with instance_position(x+5,y,obj_parcard) {tap_card();}

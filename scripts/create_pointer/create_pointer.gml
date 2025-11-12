@@ -13,6 +13,7 @@ function create_pointer(){
 			
 		
 		case rm_game_mp:
+		case rm_game_mp_online:
 				with obj_draw_button if player_active{
 				if has_drawn2 with end_id instance_create_layer(x - sprite_width div 2, y + sprite_height div  2, "Flying", obj_pointer,{hpos: 1, vpos: 2})
 				else instance_create_layer(x - sprite_width div 2, y + sprite_height div  2, "Flying", obj_pointer,{hpos: 0, vpos: 2})
