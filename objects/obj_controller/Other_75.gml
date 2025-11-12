@@ -12,7 +12,9 @@ if (!_is_discovered && !_is_lost)
 var _gamepad_id = async_load[? "pad_index"];
 if (_is_discovered) {
     show_debug_message("GAMEPAD {0} DISCOVERED", _gamepad_id);
-    if array_length(devices) < 4 array_push(devices, _gamepad_id);
+    if array_length(devices) < 4 {
+		array_push(devices, _gamepad_id);
+	}
 } else {
     show_debug_message("GAMEPAD {0} LOST", _gamepad_id);
     

@@ -8,7 +8,7 @@ function mouse_controls(){
 	///////Main Menu
 		case rm_game_select:
 			
-			if position_meeting(mouse_x,mouse_y, obj_main_select) and (mouse_check_button(mb_left) or global.touchmode) with instance_position(mouse_x,mouse_y,obj_main_select){
+			if position_meeting(mouse_x,mouse_y, obj_main_select) and mouse_check_button(mb_left) with instance_position(mouse_x,mouse_y,obj_main_select){
 				if label == "Single Player" room_goto(rm_game_singoption);
 				else if label == "Multiplayer" room_goto(rm_game_multioption);
 				else if label == "Settings" room_goto(rm_settings);
@@ -24,7 +24,8 @@ function mouse_controls(){
 			else if (mouse_check_button_pressed(mb_left) and position_meeting(mouse_x,mouse_y,obj_mic)) with instance_position(mouse_x,mouse_y,obj_mic) say_number(val)
 			
 			else if instance_exists(obj_parcard) and (mouse_check_button(mb_left) or global.touchmode) and position_meeting(mouse_x,mouse_y,obj_parcard) and !position_meeting(mouse_x,mouse_y,obj_mic) with instance_position(mouse_x,mouse_y,obj_parcard) {
-				if !just_pressed{
+				if !just_pressed and !(!mouse_check_button(mb_left) and global.touchmode and hover) and set{
+					hover = true
 					just_pressed = true
 					tap_card();
 				}

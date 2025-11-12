@@ -32,6 +32,10 @@ if room == rm_game_singoption or room == rm_game_multioption{
 		draw_set_halign(fa_right)
 		draw_text(1291,680,point_convert(global.gametimer))
 	}
+	
+	
+	
+	
 }
 
 if room == rm_settings{

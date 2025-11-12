@@ -19,7 +19,11 @@ function pointer_controls(){
 			{
 				//moves the poiner
 				if press_right() {
-					if (hpos == 1 and vpos == 0) repeat 3 move_pointer(false,true,5);
+					if room == rm_game_multioption and hpos == 0 {
+						move_pointer(false,true,5)
+						vpos = 1
+					}
+					else if (hpos == 1 and vpos == 0) repeat 3 move_pointer(false,true,5);
 					else if (hpos == 2 and vpos == 0) or (hpos == 4 and (vpos < 3 or vpos == 4)) repeat 2 move_pointer(false,true,5);
 					else if hpos = 3 and vpos > 0{
 						hpos = 4;
@@ -40,10 +44,11 @@ function pointer_controls(){
 				}
 				
 				else if press_left() {
+					//handles the initial movement
 					if (hpos == 3 and vpos == 0) repeat 3 move_pointer(false,false,5);
 					else if (hpos == 2 and vpos == 0) or (hpos == 5 and (vpos < 3 or vpos == 4)) repeat 2 move_pointer(false,false,5);
 					else move_pointer(false,false,5);
-				
+					//moved based on the previous block
 					if hpos = 0{
 						if global.gamemode = "Tallimaliuqta!" vpos = 0;
 						else if global.gamemode = "Quliliuqta!" vpos = 1;
@@ -52,7 +57,10 @@ function pointer_controls(){
 					
 					else if (hpos = 2 and vpos > 1) vpos = 1;
 					
-					else if hpos = 3 and vpos < 4 vpos = 0;
+					else if hpos = 3 and vpos < 4 {
+						if room = rm_game_singoption vpos = 0;
+						else vpos = 1
+					}
 					
 				}
 
@@ -60,7 +68,10 @@ function pointer_controls(){
 					switch hpos{
 						case 0: move_pointer(true,true,2); break;
 						case 1: 
-							if room == rm_game_multioption move_pointer(true,true,3);
+							if room == rm_game_multioption {
+								if vpos < 3 move_pointer(true,true,3);
+								else repeat 2 move_pointer(true,true,3);
+							}
 							else if room == rm_game_singoption move_pointer(true,true,2);
 							break;
 					
@@ -85,13 +96,21 @@ function pointer_controls(){
 					switch hpos{
 						case 0: move_pointer(true,false,2); break;
 						case 1: 
-							if room == rm_game_multioption move_pointer(true,false,3);
+							if room == rm_game_multioption {
+								if vpos < 1 move_pointer(true,false,3);
+								else repeat 2 move_pointer(true,false,3);
+							}
 							else if room == rm_game_singoption move_pointer(true,false,2);
 							break;
 					
 						case 2: 
 						case 3: 
-							move_pointer(true,false,1); break
+							if room == rm_game_singoption move_pointer(true,false,1); 
+							else {
+								move_pointer(false,true,5)
+								move_pointer(true,true,4)
+							}
+							break
 							
 						case 4:
 						case 5:
@@ -103,6 +122,7 @@ function pointer_controls(){
 
 
 			//move the cursor		
+			
 				if hpos == 0{
 					x = 256 - (sprite_get_width(spr_deck_1080) div 2)
 					y = 64 + vpos*320+(sprite_get_height(spr_deck_1080) div 2);
@@ -454,31 +474,76 @@ function pointer_controls(){
 }
 
 function press_left(){
+	
+	
+	
 	if array_length(obj_controller.devices) == 0 return keyboard_check_pressed(vk_left)
-	else return keyboard_check_pressed(vk_left) or gamepad_button_check_pressed(obj_controller.devices[0],gp_padl)
+	
+	else {
+		var _dev = 0
+		if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn _dev = obj_deck.turn
+		var _ax = 0
+		var _dz = 0.5
+		if obj_controller.tilt_h[_dev] < 2 _ax = gamepad_axis_value(obj_controller.devices[_dev],gp_axislh)
+		if _ax < _dz*-1 obj_controller.tilt_h[_dev]++
+		return keyboard_check_pressed(vk_left) or gamepad_button_check_pressed(obj_controller.devices[_dev],gp_padl) or (_ax < _dz*-1);
+	}
 }
 
 function press_right(){
+
 	if array_length(obj_controller.devices) == 0 return keyboard_check_pressed(vk_right)
-	else return keyboard_check_pressed(vk_right) or gamepad_button_check_pressed(obj_controller.devices[0],gp_padr)
+	else{
+		var _dev = 0
+		if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn _dev = obj_deck.turn
+		var _ax = 0
+		var _dz = 0.5
+		if obj_controller.tilt_h[_dev] < 2 _ax = gamepad_axis_value(obj_controller.devices[_dev],gp_axislh)
+		if _ax > _dz obj_controller.tilt_h[_dev]++
+		return keyboard_check_pressed(vk_right) or gamepad_button_check_pressed(obj_controller.devices[_dev],gp_padr) or (_ax > _dz)
+	}
 }
 
 function press_up(){
 	if array_length(obj_controller.devices) == 0 return keyboard_check_pressed(vk_up)
-	else return keyboard_check_pressed(vk_up) or gamepad_button_check_pressed(obj_controller.devices[0],gp_padu)
+	else{
+		var _dev = 0
+		if room == rm_game_mp and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn _dev = obj_deck.turn
+		var _ax = 0
+		var _dz = 0.5
+		if obj_controller.tilt_v[_dev] < 2 _ax = gamepad_axis_value(obj_controller.devices[_dev],gp_axislv)
+		if _ax < _dz*-1 obj_controller.tilt_v[_dev]++
+		return keyboard_check_pressed(vk_up) or gamepad_button_check_pressed(obj_controller.devices[_dev],gp_padu) or (_ax < _dz*-1)
+	}
 }
 
 function press_down(){
 	if array_length(obj_controller.devices) == 0 return keyboard_check_pressed(vk_down)
-	else return keyboard_check_pressed(vk_down) or gamepad_button_check_pressed(obj_controller.devices[0],gp_padd)
+	else{
+		var _dev = 0
+		if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn _dev = obj_deck.turn
+		var _ax = 0
+		var _dz = 0.5
+		if obj_controller.tilt_v[_dev] < 2 _ax = gamepad_axis_value(obj_controller.devices[_dev],gp_axislv)
+		if _ax > _dz obj_controller.tilt_v[_dev]++
+		return keyboard_check_pressed(vk_down) or gamepad_button_check_pressed(obj_controller.devices[_dev],gp_padd) or (_ax > _dz)
+	}
 }
 
 function press_space(){
+	var _dev = 0
+	if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn _dev = obj_deck.turn
 	if array_length(obj_controller.devices) == 0 return keyboard_check_pressed(vk_space)
-	else return keyboard_check_pressed(vk_space) or gamepad_button_check_pressed(obj_controller.devices[0],gp_face1)
+	else return keyboard_check_pressed(vk_space) or gamepad_button_check_pressed(obj_controller.devices[_dev],gp_face1)
 }
 
 function press_enter(){
+	var _dev = 0
+	if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn _dev = obj_deck.turn
 	if array_length(obj_controller.devices) == 0 return keyboard_check_pressed(vk_enter)
-	else return keyboard_check_pressed(vk_enter) or gamepad_button_check_pressed(obj_controller.devices[0],gp_face4)
+	else return keyboard_check_pressed(vk_enter) or gamepad_button_check_pressed(obj_controller.devices[_dev],gp_face4)
+}
+
+function press_any(){
+	return press_up() or press_down() or press_left() or press_right() or press_space() or press_enter()	
 }

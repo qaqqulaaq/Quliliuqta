@@ -9,5 +9,7 @@ alarm[1] = game_get_speed(gamespeed_fps) div 8;
 alarm[2] = game_get_speed(gamespeed_fps) div 4;
 
 just_pressed = false
+hover = false
+
 
 mic = undefined;
