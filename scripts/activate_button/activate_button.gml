@@ -63,6 +63,8 @@ function activate_button(_name = ""){
 			var _label = label;
 			with obj_add_button if setting != "timer" {
 				setting = _label;
+				if (setting == "Points" and global.pointgoal == 400) or (setting == "Decks" and global.deckgoal == 30) timer_dir = 1
+				else timer_dir = -1
 				if setting == "Decks" label = "+"+K01
 				else if setting == "Points" label = "+"+K05
 			}
@@ -70,6 +72,8 @@ function activate_button(_name = ""){
 	
 			with obj_minus_button if setting != "timer" {
 				setting = _label;
+				if (setting == "Points" and global.pointgoal == 5) or (setting == "Decks" and global.deckgoal == 1) timer_dir = 1
+				else timer_dir = -1
 				if setting == "Decks" label = "+"+K01
 				else if setting == "Points" label = "+"+K05
 			}

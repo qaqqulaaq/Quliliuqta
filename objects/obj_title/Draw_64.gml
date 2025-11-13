@@ -34,7 +34,9 @@ if room == rm_game_singoption or room == rm_game_multioption{
 	}
 	
 	
-	
+	if global.setgoal == "Points" draw_text(1696, 448,  point_convert(global.pointgoal) + " Points")
+	else if global.setgoal == "Decks" and global.deckgoal == 1 draw_text(1696, 448,  point_convert(global.deckgoal) + " Deck")
+	else if global.setgoal == "Decks" draw_text(1696, 448, point_convert(global.deckgoal) + " Decks")
 	
 }
 

@@ -7,6 +7,7 @@ enum network{
 	player_disconnect,
 	draw_request,
 	select,
+	evaluate,
 	pass_control
 }
 

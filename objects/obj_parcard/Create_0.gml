@@ -12,4 +12,4 @@ just_pressed = false
 hover = false
 
 
-mic = undefined;
+mic = noone;

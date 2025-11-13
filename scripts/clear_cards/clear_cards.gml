@@ -19,7 +19,8 @@ function clear_cards(pts,_player = 0){
 			case 3: _x = 1305; break;
 			default: _x = 0; break;		
 		}
-		obj_deck.cardlist[position] = -1
+		if room == rm_game_mp obj_deck.cardlist[position] = -1
+		else if room == rm_game_mp_online obj_deck_online.cardlist[position] = noone
 		remove_cards(_x,room_height)
 	}
 }

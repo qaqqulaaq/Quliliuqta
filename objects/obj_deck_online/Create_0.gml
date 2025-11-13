@@ -25,7 +25,7 @@ turn = -1
 topped = false
 
 
-cardlist = array_create(14,-1)
+cardlist = array_create(14,noone)
 
 
 

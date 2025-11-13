@@ -2,9 +2,6 @@
 // You can write your code in this editor
 
 		//removes the selected status from all cards and resets the variables in the deck
-
-	
-		unselect_all()
 	
 		timer_dir = -1
 		pressed = false
@@ -41,6 +38,8 @@
 		
 		if room == rm_game_mp_online send_draw_request()
 		else{
+			unselect_all()
+			
 			//If the deck is out of cards, remove the ones still in play and shuffle the deck
 			var _id = id
 			with obj_deck{
