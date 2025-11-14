@@ -26,12 +26,25 @@ function draw_card(_num,_tut = false){
 }
 
 function remote_draw(){
-	//Checks to see which player, if any, is able to draw a card
-	var _can_draw = "none"
-	with obj_draw_button if !has_drawn or !has_drawn2 {
-		_can_draw = id
-		break;
+	
+	if room == rm_game_mp{
+		//Checks to see which player, if any, is able to draw a card
+
+		var _can_draw = "none"
+		with obj_draw_button if !has_drawn or !has_drawn2 {
+			_can_draw = id
+			break;
+		}
+		//if so, the player's "draw card" event is activated 
+		if _can_draw != "none" with _can_draw activate_button()
 	}
-	//if so, the player's "draw card" event is activated 
-	if _can_draw != "none" with _can_draw activate_button()
+	
+	else if room == rm_game_mp_online{
+		if obj_deck_online.turn == global.onlinenum{
+			
+			with obj_draw_button if !has_drawn or !has_drawn2 activate_button()
+		}
+		
+	}
+	
 }

@@ -133,6 +133,8 @@ function send_selection(_pos,_sel){
 }
 
 function send_evaluation_request(){
+	with obj_parcard alarm[4] = game_get_speed(gamespeed_fps)
+	
 	buffer_seek(obj_client.client_buffer,buffer_seek_start,0);
 	buffer_write(obj_client.client_buffer,buffer_u8,network.evaluate);
 	network_send_packet(obj_client.client,obj_client.client_buffer,buffer_tell(obj_client.client_buffer));

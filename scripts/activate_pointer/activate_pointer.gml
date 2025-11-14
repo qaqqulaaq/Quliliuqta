@@ -45,9 +45,10 @@ function activate_pointer(){
 			case rm_settings:
 			
 				if hpos == 0{
-					if vpos = 0 dialect_set("North Slope Coastal");
-					else if vpos == 1 dialect_set("Anaktuvuk Pass");
-					else if vpos == 2 dialect_set("Point Hope");
+					if vpos == 0 dialect_set("North Slope Coastal");
+					else if vpos == 1 dialect_set("Wainwright");
+					else if vpos == 2 dialect_set("Anaktuvuk Pass");
+					else if vpos == 3 dialect_set("Point Hope");
 				}
 				
 				else with instance_position(x+20,y,obj_touch_toggle) activate_button()

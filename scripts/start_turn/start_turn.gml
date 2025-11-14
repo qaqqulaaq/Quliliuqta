@@ -75,7 +75,7 @@ function start_turn_multiplayer(_maxcards){
 
 function start_turn_multiplayer_online(_maxcards){
 	var _turn = turn
-
+	won_round = false
 	with obj_player if player_num == _turn player_active = true;
 	with obj_draw_button if player_num = _turn {
 		has_drawn = false;

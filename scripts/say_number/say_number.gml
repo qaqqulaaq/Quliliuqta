@@ -55,6 +55,7 @@ function say_number(_val){
 				case 20: audio_play_sound(snd_20_AIN,1,false); break
 			}
 		}
+		break;
 		
 		case "Anaktuvuk Pass":
 			switch _val{

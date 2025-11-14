@@ -91,6 +91,7 @@ function dialect_set(_dia = "North Slope Coastal"){
 
 	switch _dia{
 		case "North Slope Coastal":
+		case "Wainwright":
 			global.numnamearr[0] = [["suit","chuq"]];
 			global.numnamearr[1] = [["a","tau","siq"]];
 
@@ -118,14 +119,13 @@ function dialect_set(_dia = "North Slope Coastal"){
 		break;
 
 		case "Point Hope":
-			global.numnamearr[0] = [["suu","ŋi","ḷaq"]];
+			global.numnamearr[0] = [["suit","chuq"]];
 			global.numnamearr[1] = [["a","tau","siq"]];
 
 			global.numnamearr[3] = [["pi","ŋa","suy"]];
 			global.numnamearr[4] = [["si","sa","maiy"]];
 			global.numnamearr[5] = [["tal","lim","aiy"]];
 			global.numnamearr[6] = [["it","chak","sraiy"]];
-
 
 			global.numnamearr[10] = [["qu","liiy"]];
 

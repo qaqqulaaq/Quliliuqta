@@ -241,8 +241,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_game_mp_online","path":"rooms/rm_game_mp_online/rm_game_mp_online.yy",},},
     {"roomId":{"name":"rm_game_select","path":"rooms/rm_game_select/rm_game_select.yy",},},
+    {"roomId":{"name":"rm_game_mp_online","path":"rooms/rm_game_mp_online/rm_game_mp_online.yy",},},
     {"roomId":{"name":"rm_game_multioption","path":"rooms/rm_game_multioption/rm_game_multioption.yy",},},
     {"roomId":{"name":"rm_game_mp","path":"rooms/rm_game_mp/rm_game_mp.yy",},},
     {"roomId":{"name":"rm_game_mp_tutorial","path":"rooms/rm_game_mp_tutorial/rm_game_mp_tutorial.yy",},},

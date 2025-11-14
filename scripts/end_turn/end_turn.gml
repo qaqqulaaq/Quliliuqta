@@ -21,6 +21,9 @@ function end_turn(){
 			timer_dir = 1
 		}
 	
-		with obj_end_button timer_dir = 1
+		
 	}
+	
+	
+	with obj_end_button timer_dir = 1
 }

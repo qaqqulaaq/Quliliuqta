@@ -13,13 +13,14 @@
     {"name":"inst_3A582FA5","path":"rooms/rm_settings/rm_settings.yy",},
     {"name":"inst_4F55956A","path":"rooms/rm_settings/rm_settings.yy",},
     {"name":"inst_7960DC8A","path":"rooms/rm_settings/rm_settings.yy",},
+    {"name":"inst_133C3671","path":"rooms/rm_settings/rm_settings.yy",},
   ],
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_EB43241","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_EB43241","objectId":{"name":"obj_dialect_select","path":"objects/obj_dialect_select/obj_dialect_select.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_dialect_select","path":"objects/obj_dialect_select/obj_dialect_select.yy",},"propertyId":{"name":"label","path":"objects/obj_dialect_select/obj_dialect_select.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"North Slope Coastal\"",},
-          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":480.0,"y":544.0,},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":480.0,"y":352.0,},
         {"$GMRInstance":"v4","%Name":"inst_443A2EB3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_443A2EB3","objectId":{"name":"obj_dialect_select","path":"objects/obj_dialect_select/obj_dialect_select.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_dialect_select","path":"objects/obj_dialect_select/obj_dialect_select.yy",},"propertyId":{"name":"label","path":"objects/obj_dialect_select/obj_dialect_select.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Anaktuvuk Pass\"",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":480.0,"y":736.0,},
@@ -34,6 +35,9 @@
         {"$GMRInstance":"v4","%Name":"inst_7960DC8A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7960DC8A","objectId":{"name":"obj_touch_toggle","path":"objects/obj_touch_toggle/obj_touch_toggle.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_parbutton","path":"objects/obj_parbutton/obj_parbutton.yy",},"propertyId":{"name":"label","path":"objects/obj_parbutton/obj_parbutton.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Off",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1376.0,"y":704.0,},
+        {"$GMRInstance":"v4","%Name":"inst_133C3671","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_133C3671","objectId":{"name":"obj_dialect_select","path":"objects/obj_dialect_select/obj_dialect_select.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_dialect_select","path":"objects/obj_dialect_select/obj_dialect_select.yy",},"propertyId":{"name":"label","path":"objects/obj_dialect_select/obj_dialect_select.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"\"Wainwright\"",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":480.0,"y":544.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],

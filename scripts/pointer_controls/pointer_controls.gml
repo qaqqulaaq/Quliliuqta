@@ -204,9 +204,11 @@ function pointer_controls(){
 								break;
 							}
 						}
-						x = 60*global.winscale + 90*global.winscale*hpos - sprite_get_width(spr_blank_1080) div 2;
-						y = 30*global.winscale + 105*global.winscale*vpos + sprite_get_height(spr_blank_1080) div 2;						
 						
+						if hpos != 5{
+							x = 60*global.winscale + 90*global.winscale*hpos - sprite_get_width(spr_blank_1080) div 2;
+							y = 30*global.winscale + 105*global.winscale*vpos + sprite_get_height(spr_blank_1080) div 2;						
+						}
 						
 					}
 					//otherwise, the pointer moves to the next appropriate card
@@ -431,16 +433,17 @@ function pointer_controls(){
 			}
 			case rm_settings:
 			{
-				if press_down() and hpos == 0 move_pointer(true,true,2);
-				else if press_up() and hpos == 0 move_pointer(true,false,2);
+				if press_down() and hpos == 0 move_pointer(true,true,3);
+				else if press_up() and hpos == 0 move_pointer(true,false,3);
 				else if press_left(){
 					move_pointer(false,false,2);					
 					if hpos == 0 {
 						
 						switch global.dialect{
 							case "North Slope Coastal": vpos = 0; break;
-							case "Anaktuvuk Pass": vpos = 1; break;
-							case "Point Hope": vpos = 2; break;
+							case "Wainwright": vpos = 1; break;
+							case "Anaktuvuk Pass": vpos = 2; break;
+							case "Point Hope": vpos = 3; break;
 						}
 					}
 					else vpos = 0;
@@ -450,8 +453,9 @@ function pointer_controls(){
 					if hpos == 0 {
 						switch global.dialect{
 							case "North Slope Coastal": vpos = 0; break;
-							case "Anaktuvuk Pass": vpos = 1; break;
-							case "Point Hope": vpos = 2; break;
+							case "Wainwright": vpos = 1; break;
+							case "Anaktuvuk Pass": vpos = 2; break;
+							case "Point Hope": vpos = 3; break;
 						}
 					}
 					else vpos = 0;
@@ -459,7 +463,7 @@ function pointer_controls(){
 				
 				if hpos == 0{
 					x = 480 - sprite_get_width(spr_game_select) div 2
-					y = 544 + vpos*192
+					y = 352 + vpos*192
 				}
 				
 				else {
@@ -481,7 +485,7 @@ function press_left(){
 	
 	else {
 		var _dev = 0
-		if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn _dev = obj_deck.turn
+		if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn+1 _dev = obj_deck.turn
 		var _ax = 0
 		var _dz = 0.5
 		if obj_controller.tilt_h[_dev] < 2 _ax = gamepad_axis_value(obj_controller.devices[_dev],gp_axislh)
@@ -495,7 +499,7 @@ function press_right(){
 	if array_length(obj_controller.devices) == 0 return keyboard_check_pressed(vk_right)
 	else{
 		var _dev = 0
-		if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn _dev = obj_deck.turn
+		if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn+1 _dev = obj_deck.turn
 		var _ax = 0
 		var _dz = 0.5
 		if obj_controller.tilt_h[_dev] < 2 _ax = gamepad_axis_value(obj_controller.devices[_dev],gp_axislh)
@@ -508,7 +512,7 @@ function press_up(){
 	if array_length(obj_controller.devices) == 0 return keyboard_check_pressed(vk_up)
 	else{
 		var _dev = 0
-		if room == rm_game_mp and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn _dev = obj_deck.turn
+		if room == rm_game_mp and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn+1 _dev = obj_deck.turn
 		var _ax = 0
 		var _dz = 0.5
 		if obj_controller.tilt_v[_dev] < 2 _ax = gamepad_axis_value(obj_controller.devices[_dev],gp_axislv)
@@ -521,7 +525,7 @@ function press_down(){
 	if array_length(obj_controller.devices) == 0 return keyboard_check_pressed(vk_down)
 	else{
 		var _dev = 0
-		if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn _dev = obj_deck.turn
+		if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn+1 _dev = obj_deck.turn
 		var _ax = 0
 		var _dz = 0.5
 		if obj_controller.tilt_v[_dev] < 2 _ax = gamepad_axis_value(obj_controller.devices[_dev],gp_axislv)
@@ -532,16 +536,21 @@ function press_down(){
 
 function press_space(){
 	var _dev = 0
-	if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn _dev = obj_deck.turn
+	if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn+1 _dev = obj_deck.turn
 	if array_length(obj_controller.devices) == 0 return keyboard_check_pressed(vk_space)
 	else return keyboard_check_pressed(vk_space) or gamepad_button_check_pressed(obj_controller.devices[_dev],gp_face1)
 }
 
 function press_enter(){
 	var _dev = 0
-	if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn _dev = obj_deck.turn
+	if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn+1 _dev = obj_deck.turn
 	if array_length(obj_controller.devices) == 0 return keyboard_check_pressed(vk_enter)
 	else return keyboard_check_pressed(vk_enter) or gamepad_button_check_pressed(obj_controller.devices[_dev],gp_face4)
+}
+
+function press_exit(){
+	if array_length(obj_controller.devices) == 0 return keyboard_check_pressed(vk_escape);
+	else return keyboard_check_pressed(vk_escape) or gamepad_button_check_pressed(obj_controller.devices[0],gp_start);
 }
 
 function press_any(){

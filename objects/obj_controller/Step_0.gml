@@ -15,22 +15,19 @@ if array_length(devices) > 0{
 	}
 }
 
-if !mouse_check_button(mb_left) {
-		with obj_parcard just_pressed = false;
-		with obj_game_exit alarm[0] = -1
-
-}
+if !mouse_check_button(mb_left) with obj_parcard just_pressed = false;
 
 if mouse_check_button_pressed(mb_left){
 	with obj_pointer instance_destroy();
 	global.pointeron = false	
 }
 
+if !(keyboard_check(vk_escape) or (array_length(devices) > 0 and gamepad_button_check(devices[0],gp_start)) or mouse_check_button(mb_left)) with obj_game_exit alarm[0] = -1;
 
 
 
 if (room == rm_game_mp or room == rm_game_sp) and obj_deck.game_over {
-	if mouse_check_button_pressed(mb_any) or keyboard_check_pressed(vk_anykey) with obj_game_exit game_exit();
+	if mouse_check_button_pressed(mb_any) or press_any() or press_exit() with obj_game_exit game_exit();
 }
 
 else {
@@ -38,7 +35,11 @@ else {
 	///////Keyboard Controls/////////////
 	
 	//exits the room or game
-	if keyboard_check_pressed(vk_escape) game_exit();
+	
+	if press_exit() and (room == rm_settings or room == rm_game_singoption or room == rm_game_multioption) game_exit();
+	
+	else if press_exit() with obj_game_exit alarm[0] = game_get_speed(gamespeed_fps)
+	
 	
 	//activates the deck, even if there is no pointer object
 	else if (room == rm_game_sp or room == rm_game_mp or room == rm_game_mp_online) and press_enter() deck_event();
@@ -65,9 +66,9 @@ else {
 	//If the mouse button is released, settings related to having the mouse button held are reset
 
 	//Controls related to exiting the game mode, or the game itself: hold the button if in touch mode to exit
-	else if (position_meeting(mouse_x,mouse_y,obj_game_exit) and mouse_check_button_pressed(mb_left) and not global.touchmode) game_exit();
+	else if (position_meeting(mouse_x,mouse_y,obj_game_exit) and mouse_check_button_pressed(mb_left) and (room == rm_settings or room == rm_game_singoption or room == rm_game_multioption)) game_exit();
 	
-	else if (position_meeting(mouse_x,mouse_y,obj_game_exit) and mouse_check_button_pressed(mb_left) and global.touchmode) with obj_game_exit alarm[0] = game_get_speed(gamespeed_fps)
+	else if (position_meeting(mouse_x,mouse_y,obj_game_exit) and mouse_check_button_pressed(mb_left)) with obj_game_exit alarm[0] = game_get_speed(gamespeed_fps)
 
 
 	//all miscelaneous mouse controls

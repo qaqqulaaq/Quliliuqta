@@ -4,7 +4,7 @@ function deck_event(){
 	
 	with obj_deck{
 		//in multiplayer, any player can click the deck to add a card
-		if room == rm_game_mp remote_draw();
+		if room == rm_game_mp or room == rm_game_mp_online remote_draw();
 
 		//in single player mode, all progression is controlled by the deck object
 		else if can_click{

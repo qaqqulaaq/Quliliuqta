@@ -22,7 +22,7 @@ function activate_button(_name = ""){
 		
 		
 		case obj_draw_button:
-			if player_active and (!has_drawn or !has_drawn2){
+			if player_active and (!has_drawn or !has_drawn2) and not (room == rm_game_mp_online and obj_deck_online.turn != global.onlinenum){
 				player_active = false
 				alarm[3] = game_get_speed(gamespeed_fps) div 8
 				pressed = true
@@ -31,7 +31,7 @@ function activate_button(_name = ""){
 			break;
 		
 		case obj_end_button:
-			if player_active and has_drawn end_turn();	
+			if player_active and has_drawn and not (room == rm_game_mp_online and obj_deck_online.turn != global.onlinenum) end_turn();	
 			break;
 		
 		case obj_start_button:

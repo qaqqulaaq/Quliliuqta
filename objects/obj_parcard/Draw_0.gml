@@ -42,8 +42,8 @@ else {
 	
 	
 	else if selected and hspeed == 0 and vspeed = 0 {
-		if (obj_deck.alarm[0] > 0 and obj_deck.val_selected == global.gamegoal) or obj_deck.won_round draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, c_lime, 1);
-		else if obj_deck.alarm[0] > 0  draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, $3333DD, 1);
+		if ((obj_deck.alarm[0] > 0 or alarm[4] > 0) and obj_deck.val_selected == global.gamegoal) or obj_deck.won_round draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, c_lime, 1);
+		else if (obj_deck.alarm[0] > 0 or alarm[4] > 0)  draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, $3333DD, 1);
 		else draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, c_teal, 1);
 	}
 	

@@ -8,10 +8,10 @@ draw_set_font(global.pointfont);
 
 var _text = player_name + " " +string(player_num+1) + "\nScore: " +string(disp_score)
 
-var _tx = string_width(_text)
+var _tx = string_width_ext(_text,-1,-1)
 var _ty = string_height(_text)
 
-if player_active{
+if (player_active and room == rm_game_mp) or (room == rm_game_mp_online and obj_deck_online.turn == player_num){
 	draw_set_color($ABDCC3)
 	draw_set_alpha(0.5)
 	draw_roundrect_ext(x- _tx div 2 - 50, y, x + _tx div 2 + 50, y + _ty,100,100, false)

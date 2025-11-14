@@ -26,7 +26,17 @@ function create_pointer(){
 			break;
 			
 		case rm_settings:
-			with obj_dialect_select if global.dialect == label instance_create_layer(x- (sprite_width div 2), y,"Instances",obj_pointer);
+			
+			var _vpos
+			
+			switch global.dialect{
+				case "North Slope Coastal": _vpos = 0; break;
+				case "Wainwright": _vpos = 1; break;
+				case "Anaktuvuk Pass": _vpos = 2; break;
+				case "Point Hope": _vpos = 3; break;
+			}
+			
+			with obj_dialect_select if global.dialect == label instance_create_layer(x- (sprite_width div 2), y,"Instances",obj_pointer,{vpos: _vpos});
 		
 	}
 	
