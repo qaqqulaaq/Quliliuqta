@@ -23,7 +23,7 @@ else if room == rm_game_singoption draw_text(768,600,"VS Computer:")
 
 if room == rm_game_singoption or room == rm_game_multioption{
 	
-	draw_text(1696,96,"Goal:")
+	draw_text(1696,90,"Goal:")
 	if global.setgoal == "Points" draw_text(1696, 448,  point_convert(global.pointgoal) + " Points")
 	else if global.setgoal == "Decks" and global.deckgoal == 1 draw_text(1696, 448,  point_convert(global.deckgoal) + " Deck")
 	else if global.setgoal == "Decks" draw_text(1696, 448, point_convert(global.deckgoal) + " Decks")
@@ -44,6 +44,15 @@ if room == rm_game_singoption or room == rm_game_multioption{
 
 if room == rm_settings{
 	
-	draw_text(1294,600,"Touch Mode:");
-	draw_text(480,204,"Dialect");
+	//256
+	draw_text(1294,160,"Include Minus Cards:")
+	
+	
+	//544
+	draw_text(1294,448,"Play Sounds:")
+	
+	//button at 832
+	draw_text(1294,736,"Touch Mode:");
+	
+	draw_text(480,122,"Dialect:");
 }

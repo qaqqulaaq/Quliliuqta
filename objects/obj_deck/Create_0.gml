@@ -33,6 +33,7 @@ if room == rm_game_mp {
 }
 
 else if room == rm_game_sp cardlist = array_create(15,-1)
+sel_list = [];
 
 
 decks = 0;

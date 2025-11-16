@@ -1,7 +1,11 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function say_number(_val){
-	audio_stop_all()
+	
+	
+	audio_group_stop_all(number_pronunciation)
+	
+	if !global.soundon return;
 	
 	switch global.dialect{
 		case "North Slope Coastal":
@@ -108,4 +112,26 @@ function say_number(_val){
 			case 20: audio_play_sound(snd_20_ph,1,false); break
 		}
 	}
+}
+
+function say_number_route(){
+	
+	if !global.soundon return;
+	
+	var _hpos;
+	var _vpos;
+		
+	with obj_pointer{
+		_hpos = hpos
+		_vpos = vpos
+	}
+	
+	if room == rm_game_sp or room = rm_game_sp_tutorial{
+		if _hpos < 5 with obj_deck if is_numeric(cardlist[_hpos + 5*_vpos]) say_number(cardlist[_hpos + 5*_vpos]) 	
+	}
+	
+	else if room == rm_game_mp or room == rm_game_mp_online{
+		if _vpos < 2 with obj_deck if is_numeric(cardlist[_hpos + 7*_vpos]) say_number(cardlist[_hpos + 7*_vpos]) 
+	}
+	
 }

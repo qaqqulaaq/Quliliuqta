@@ -13,9 +13,10 @@ function game_exit(){
 			room_goto(rm_game_singoption); 
 			break;
 	
+		case rm_settings:
 		case rm_game_multioption:
 		case rm_game_singoption:
-		case rm_settings:
+			save_setting();
 			room_goto(rm_game_select); 
 			break;
 	

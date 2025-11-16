@@ -18,10 +18,10 @@ if room = rm_game_sp{
 	draw_text(room_width * 3 div 4+_sc*16, _sc*32, "Points: "+string(disp_pts) + "\nComputer: " + string(comp_disp_pts))
 	draw_text(_sc*room_width * 7 div 8, 32+string_height("Points:"), string(disp_pts))
 	
-	//draw_text(5,5,string(val_selected));  for debugging card value issues
 }
 
 if game_over{
+	
 	var _text;
 	
 	if room = rm_game_sp {
@@ -30,10 +30,26 @@ if game_over{
 		else _text = "Computer Wins!"
 		
 	}
-	else if room == rm_game_mp {
+	else if room == rm_game_mp or rm_game_mp_online {
 		if winner = "Tie" _text = "It's a tie!"
 		else _text = winner + " wins!"
 	}
 	
 	draw_dialog_box(_text)
 }
+
+
+/*
+
+//Used for testing purposes
+
+draw_set_font(global.cardtextfont)
+draw_set_color(c_white)
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)
+	
+for (var _i = 0; _i < array_length(sel_list); _i++){
+	draw_text(5,5+20*_i,string(sel_list[_i]))
+}
+
+*/

@@ -1,7 +1,7 @@
 /// @description Single Player points
 
 
-clear_cards_solo(num_selected)
+clear_cards_solo()
 if instance_exists(obj_pointer) and obj_pointer.hpos !=5 and cardlist[obj_pointer.hpos+obj_pointer.vpos*5] == -1{
 	
 	for (var _i = 0; _i < 15; _i++){

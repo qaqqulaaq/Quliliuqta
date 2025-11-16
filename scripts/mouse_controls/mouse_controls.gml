@@ -53,7 +53,7 @@ function mouse_controls(){
 			
 		case rm_settings:
 			if position_meeting(mouse_x,mouse_y,obj_dialect_select) and mouse_check_button_pressed(mb_left) with instance_position(mouse_x,mouse_y,obj_dialect_select) dialect_set(label);
-			else if position_meeting(mouse_x,mouse_y,obj_touch_toggle) and mouse_check_button(mb_left) with instance_position(mouse_x,mouse_y,obj_touch_toggle) activate_button()
+			else if position_meeting(mouse_x,mouse_y,obj_setting_toggle) and mouse_check_button(mb_left) with instance_position(mouse_x,mouse_y,obj_setting_toggle) activate_button()
 			
 /////Mouse Controls End Here
 	}

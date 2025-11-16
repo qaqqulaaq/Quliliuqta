@@ -1,3 +1,3 @@
 /// @description Computer Selection
 
-selected = true;
+select_card();

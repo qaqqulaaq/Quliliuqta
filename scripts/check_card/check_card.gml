@@ -4,7 +4,7 @@
 function check_card(_goal){
 	//create a status array based on which cards are available
 	var _status = array_create(_goal,0);
-	with obj_parcard if val > 0 _status[val-1] += 1;
+	with obj_parcard if is_numeric(val) and val > 0 _status[val-1] += 1;
 	
 	//End the function early if it is obviously impossible to achieve (the sum of the status is less than the target), or if the number is exact
 	if step_add(_status) == _goal {    //if the number is exact, then it should be the only possible outcome
@@ -75,6 +75,28 @@ function check_card(_goal){
 	return false;
 	
 }
+
+function comp_select(_array){
+	var _timeadj = 0;
+	
+	with obj_parcard if val == 0{
+		alarm[0] = 5 + _timeadj*game_get_speed(gamespeed_fps) div 2
+		_timeadj += 1;
+	}
+	
+	for(var _i = array_length(_array) - 1; _i >= 0; _i--){
+		if _array[_i] > 0 with obj_parcard{
+			if val == (_i+1){
+				alarm[0] = 5 + _timeadj*game_get_speed(gamespeed_fps) div 2
+				_timeadj += 1;
+				_array[_i] -= 1;
+				if _array[_i] == 0 break;
+			}
+		}
+	}
+	with obj_deck alarm[1] = 5 + _timeadj*game_get_speed(gamespeed_fps) div 2;
+}
+
 
 
 function get_check_array(_targ,_size){

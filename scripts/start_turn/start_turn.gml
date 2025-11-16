@@ -38,12 +38,17 @@ function start_turn_single(){
 
 
 function start_turn_multiplayer(_maxcards){
+
 	
-	if instance_number(obj_parcard) >= _maxcards and val_selected != global.gamegoal{
+	if instance_number(obj_parcard) >= _maxcards and !obj_deck.won_round{
 		clear_table()
 	}
 
-	if obj_deck.val_selected == global.gamegoal clear_cards(num_selected,turn);
+	else if obj_deck.won_round clear_cards(turn);
+	
+	won_round = false;
+	
+	win_check()
 	
 	if turn < instance_number(obj_player_stats) - 1 turn++
 	else turn = 0
@@ -107,4 +112,26 @@ function clear_table(){
 			deck_list = array_shuffle(deck_list)
 		}
 		disp_deck = point_convert(array_length(deck_list))
+}
+
+function win_check(){
+	if global.setgoal == "Decks" and (obj_deck.decks >= global.deckgoal - 1) and array_length(obj_deck.deck_list) == 0{
+			var _winner = "Tie";
+			var _score = 0;
+			
+			with obj_player_stats{
+				if player_score > _score{
+					_score = player_score
+					_winner = player_name
+				}
+				
+				else if player_score == _score _winner = "Tie"
+			}
+			
+			with obj_deck {
+				winner = _winner
+				game_over = true
+			}
+		}
+	
 }

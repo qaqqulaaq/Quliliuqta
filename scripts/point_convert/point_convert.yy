@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"point_convert",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"point_convert",
+  "parent":{
+    "name":"system",
+    "path":"folders/Scripts/system.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

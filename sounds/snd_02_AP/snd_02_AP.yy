@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"snd_02_AP",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"number_pronunciation",
+    "path":"audiogroups/number_pronunciation",
   },
   "bitDepth":1,
   "channelFormat":0,
@@ -15,7 +15,7 @@
   "name":"snd_02_AP",
   "parent":{
     "name":"Anaktuvuk Pass",
-    "path":"folders/Sounds/Anaktuvuk Pass.yy",
+    "path":"folders/Sounds/Number Pronunciation/Anaktuvuk Pass.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

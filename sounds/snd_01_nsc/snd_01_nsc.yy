@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"snd_01_nsc",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"number_pronunciation",
+    "path":"audiogroups/number_pronunciation",
   },
   "bitDepth":1,
   "channelFormat":0,
@@ -15,7 +15,7 @@
   "name":"snd_01_nsc",
   "parent":{
     "name":"North Slope Coastal",
-    "path":"folders/Sounds/North Slope Coastal.yy",
+    "path":"folders/Sounds/Number Pronunciation/North Slope Coastal.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

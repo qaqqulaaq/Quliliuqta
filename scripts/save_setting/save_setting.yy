@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"check_card_5",
+  "%Name":"save_setting",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"check_card_5",
+  "name":"save_setting",
   "parent":{
-    "name":"Comp_AI",
-    "path":"folders/Scripts/Comp_AI.yy",
+    "name":"system",
+    "path":"folders/Scripts/system.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

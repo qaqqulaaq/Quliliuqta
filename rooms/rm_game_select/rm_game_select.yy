@@ -10,8 +10,8 @@
     {"name":"inst_28FCE461","path":"rooms/rm_game_select/rm_game_select.yy",},
     {"name":"inst_57520432","path":"rooms/rm_game_select/rm_game_select.yy",},
     {"name":"inst_72086EF3","path":"rooms/rm_game_select/rm_game_select.yy",},
-    {"name":"inst_548B0D7B","path":"rooms/rm_game_select/rm_game_select.yy",},
     {"name":"inst_A3BE70D","path":"rooms/rm_game_select/rm_game_select.yy",},
+    {"name":"inst_548B0D7B","path":"rooms/rm_game_select/rm_game_select.yy",},
   ],
   "isDnd":false,
   "layers":[

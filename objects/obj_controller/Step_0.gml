@@ -55,7 +55,7 @@ else {
 		pointer_controls()	
 	}
 	
-	//else if (room == rm_game_multioption or room == rm_game_singoption or room == rm_settings) and (keyboard_check(vk_space) or keyboard_check(vk_enter)) activate_pointer_option();
+	else if press_shift() say_number_route();
 	
 	//activates the pointer if it exists
 	else if (press_space() or press_enter()) activate_pointer();

@@ -51,7 +51,7 @@ function activate_pointer(){
 					else if vpos == 3 dialect_set("Point Hope");
 				}
 				
-				else with instance_position(x+20,y,obj_touch_toggle) activate_button()
+				else with instance_position(x+20,y,obj_setting_toggle) activate_button()
 			
 		}	
 	}

@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"snd_19_AIN",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"number_pronunciation",
+    "path":"audiogroups/number_pronunciation",
   },
   "bitDepth":1,
   "channelFormat":0,
@@ -15,7 +15,7 @@
   "name":"snd_19_AIN",
   "parent":{
     "name":"Wainwright",
-    "path":"folders/Sounds/Wainwright.yy",
+    "path":"folders/Sounds/Number Pronunciation/Wainwright.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

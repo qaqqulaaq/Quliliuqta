@@ -216,21 +216,14 @@ function pointer_controls(){
 						
 					//The vertical scale selects a card if another one is in the column
 						if press_down() {
-							do {
-							move_pointer(true,true,2) 
-							x = 60*global.winscale + 90*global.winscale*hpos - sprite_get_width(spr_blank_1080) div 2;
-							y = 30*global.winscale + 105*global.winscale*vpos + sprite_get_height(spr_blank_1080) div 2;
-							}
-							until position_meeting(x+5,y,obj_parcard);
+							do move_pointer(true,true,2) 
+							until obj_deck.cardlist[hpos+vpos*5] != -1
+
 						}
 							
 						else if press_up() {
-							do {
-								move_pointer(true,false,2)
-								x = 60*global.winscale + 90*global.winscale*hpos - sprite_get_width(spr_blank_1080) div 2;
-								y = 30*global.winscale + 105*global.winscale*vpos + sprite_get_height(spr_blank_1080) div 2;
-							}
-							until position_meeting(x+5,y,obj_parcard);
+							do move_pointer(true,false,2)
+							until obj_deck.cardlist[hpos+vpos*5] != -1
 						}
 				
 						if press_right() {
@@ -239,19 +232,12 @@ function pointer_controls(){
 								
 							//just move the pointer if it will go to the deck	
 								hpos++
-								if hpos == 5 {	
-									x = obj_deck.x - obj_deck.sprite_width div 2;
-									y = obj_deck.y + obj_deck.sprite_height div 2;
-								}
+								if hpos == 5 break;
 								
 								else{
-									x = 60*global.winscale + 90*global.winscale*hpos - sprite_get_width(spr_blank_1080) div 2;
-								
-									if position_meeting(x+5,y,obj_parcard) break;
 									
-									else vpoint_check_sp();
-									
-									if position_meeting(x+5,y,obj_parcard) break;
+									if obj_deck.cardlist[hpos+vpos*5] != -1 break;
+									if vpoint_check_sp() break;
 								}			
 							}
 						}	
@@ -263,19 +249,12 @@ function pointer_controls(){
 								hpos--
 								if hpos < 0 {
 									hpos = 5
-									x = obj_deck.x - obj_deck.sprite_width div 2;
-									y = obj_deck.y + obj_deck.sprite_height div 2;
 									break;
 								}
 								
 								else{
-									x = 60*global.winscale + 90*global.winscale*hpos - sprite_get_width(spr_blank_1080) div 2;
-								
-									if position_meeting(x+5,y,obj_parcard) break;
-									
-									else vpoint_check_sp();
-									
-									if position_meeting(x+5,y,obj_parcard) break;
+									if obj_deck.cardlist[hpos+vpos*5] != -1 break;
+									if vpoint_check_sp() break;
 								}			
 							}
 						}
@@ -284,6 +263,11 @@ function pointer_controls(){
 					if hpos < 5{
 						x = 60*global.winscale + 90*global.winscale*hpos - sprite_get_width(spr_blank_1080) div 2;
 						y = 30*global.winscale + 105*global.winscale*vpos + sprite_get_height(spr_blank_1080) div 2;
+					}
+					
+					else{
+						x = obj_deck.x - obj_deck.sprite_width div 2;
+						y = obj_deck.y + obj_deck.sprite_height div 2;	
 					}
 				
 				}
@@ -332,7 +316,7 @@ function pointer_controls(){
 							vpos = 2
 							var _draw;
 							with obj_draw_button if player_active _draw = id
-							if !(_draw.has_drawn2) hpos = 0
+							if !(_draw.has_drawn) hpos = 0
 							else hpos = 1								
 						}						
 					}
@@ -369,7 +353,7 @@ function pointer_controls(){
 									vpos = 2
 									var _draw;
 									with obj_draw_button if player_active _draw = id
-									if !(_draw.has_drawn2) hpos = 0
+									if !(_draw.has_drawn) hpos = 0
 									else hpos = 1	
 								}
 							}
@@ -433,8 +417,15 @@ function pointer_controls(){
 			}
 			case rm_settings:
 			{
-				if press_down() and hpos == 0 move_pointer(true,true,3);
-				else if press_up() and hpos == 0 move_pointer(true,false,3);
+				if press_down() {
+					if hpos > 0 move_pointer(true,true,2);
+					else move_pointer(true,true,3);
+				}
+				else if press_up() {
+					if hpos > 0 move_pointer(true,false,2);
+					else move_pointer(true,false,3);
+				}
+				
 				else if press_left(){
 					move_pointer(false,false,2);					
 					if hpos == 0 {
@@ -446,7 +437,7 @@ function pointer_controls(){
 							case "Point Hope": vpos = 3; break;
 						}
 					}
-					else vpos = 0;
+					else if hpos == 2 vpos = 0;
 				}
 				else if press_right(){
 					move_pointer(false,true,2);					
@@ -458,17 +449,17 @@ function pointer_controls(){
 							case "Point Hope": vpos = 3; break;
 						}
 					}
-					else vpos = 0;
+					else if hpos == 1 vpos = 0;
 				}
 				
 				if hpos == 0{
 					x = 480 - sprite_get_width(spr_game_select) div 2
-					y = 352 + vpos*192
+					y = 288 + vpos*192
 				}
 				
 				else {
 					x = 1216 + (hpos-1)*160 - sprite_get_width(spr_end_button) div 2
-					y = 704 + sprite_get_height(spr_end_button) div 2
+					y = 256 + vpos*288 + sprite_get_height(spr_end_button) div 2
 				}
 				
 			break;
@@ -538,7 +529,7 @@ function press_space(){
 	var _dev = 0
 	if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn+1 _dev = obj_deck.turn
 	if array_length(obj_controller.devices) == 0 return keyboard_check_pressed(vk_space)
-	else return keyboard_check_pressed(vk_space) or gamepad_button_check_pressed(obj_controller.devices[_dev],gp_face1)
+	else return keyboard_check_pressed(vk_space) or gamepad_button_check_pressed(obj_controller.devices[_dev],gp_face1) or gamepad_button_check_pressed(obj_controller.devices[_dev],gp_face2)
 }
 
 function press_enter(){
@@ -548,11 +539,19 @@ function press_enter(){
 	else return keyboard_check_pressed(vk_enter) or gamepad_button_check_pressed(obj_controller.devices[_dev],gp_face4)
 }
 
+function press_shift(){
+	var _dev = 0
+	if room == rm_game_mp  and obj_deck.turn > -1 and array_length(obj_controller.devices) >= obj_deck.turn+1 _dev = obj_deck.turn
+	if array_length(obj_controller.devices) == 0 return keyboard_check_pressed(vk_shift)
+	else return keyboard_check_pressed(vk_shift) or gamepad_button_check_pressed(obj_controller.devices[_dev],gp_face3)	
+}
+
+
 function press_exit(){
 	if array_length(obj_controller.devices) == 0 return keyboard_check_pressed(vk_escape);
 	else return keyboard_check_pressed(vk_escape) or gamepad_button_check_pressed(obj_controller.devices[0],gp_start);
 }
 
 function press_any(){
-	return press_up() or press_down() or press_left() or press_right() or press_space() or press_enter()	
+	return press_up() or press_down() or press_left() or press_right() or press_space() or press_enter() or press_shift();	
 }

@@ -95,7 +95,7 @@ function receive_packet(_buffer){
 			var _fullcheck = buffer_read(_buffer,buffer_bool);
 			
 			if _fullcheck with obj_parcard remove_cards(obj_deck_online.x,obj_deck_online.y);
-			else if _pts > 0 clear_cards(_pts,obj_deck_online.turn)
+			else if _pts > 0 clear_cards(obj_deck_online.turn)
 			
 			break;
 			

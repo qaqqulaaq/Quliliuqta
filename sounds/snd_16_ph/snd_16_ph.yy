@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"snd_16_ph",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"number_pronunciation",
+    "path":"audiogroups/number_pronunciation",
   },
   "bitDepth":1,
   "channelFormat":0,
@@ -15,7 +15,7 @@
   "name":"snd_16_ph",
   "parent":{
     "name":"Point Hope",
-    "path":"folders/Sounds/Point Hope.yy",
+    "path":"folders/Sounds/Number Pronunciation/Point Hope.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -3,20 +3,8 @@
 function activate_button(_name = ""){
 	switch object_index{
 		
-		case obj_touch_toggle:
-			
-			if (label == "On" and !global.touchmode){
-				timer_dir = 1
-				with obj_touch_toggle if label == "Off" timer_dir = -1
-				global.touchmode = true
-			}
-			
-			else if (label == "Off" and global.touchmode){
-				timer_dir = 1
-				with obj_touch_toggle if label == "On" timer_dir = -1
-				global.touchmode = false
-			}
-			
+		case obj_setting_toggle:
+			setting_toggle()
 			break;
 
 		
@@ -35,6 +23,7 @@ function activate_button(_name = ""){
 			break;
 		
 		case obj_start_button:
+			save_setting();
 			timer_dir = 1
 			pressed = true;
 			break;

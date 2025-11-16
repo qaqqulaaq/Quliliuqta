@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Function_bank",
+  "%Name":"deck_shuffle",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Function_bank",
+  "name":"deck_shuffle",
   "parent":{
-    "name":"system",
-    "path":"folders/Scripts/system.yy",
+    "name":"deck controls",
+    "path":"folders/Scripts/controls/deck controls.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -6,7 +6,7 @@
 
 draw_set_font(global.pointfont);
 
-var _text = player_name + " " +string(player_num+1) + "\nScore: " +string(disp_score)
+var _text = player_name + "\nScore: " +string(disp_score)
 
 var _tx = string_width_ext(_text,-1,-1)
 var _ty = string_height(_text)

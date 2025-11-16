@@ -6,9 +6,13 @@ function end_turn(){
 	if room == rm_game_mp_online send_evaluation_request();
 	
 	else{
-		if instance_number(obj_parcard) >= 14 and obj_deck.val_selected != global.gamegoal with obj_parcard remove_cards(obj_deck.x,obj_deck.y, false)
+		
+		var _eval = 0;
+		if array_length(obj_deck.sel_list) > 0 _eval = evaluate_cards();
+		if instance_number(obj_parcard) >= 14 and _eval != global.gamegoal with obj_parcard remove_cards(obj_deck.x,obj_deck.y, false)
 	
 		with obj_deck{
+			if _eval == global.gamegoal won_round = true;
 			alarm[2] = 0
 			alarm[0] = game_get_speed(gamespeed_fps)
 		}

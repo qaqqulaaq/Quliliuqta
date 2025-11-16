@@ -3,6 +3,8 @@
 
 
 randomize();
+audio_group_load(number_pronunciation)
+
 
 //Sets the resolution, should be set to 2 if loading HTML
 global.winscale = 3;
@@ -10,22 +12,29 @@ font_set();
 
 
 global.onlinenum = 0;
-
 global.pointeron = false;
+
+//Game Settings
+global.dialect = "North Slope Coastal";
+global.minuscard = false;
+global.soundon = false;
+global.touchmode = false;
 
 //Default game options
 global.gamemode = "Quliliuqta!";
 global.gamegoal = 10;
 global.num_of_players = 4;
 global.gametimer = 0;
-global.touchmode = false;
 global.vscomp = true;
-global.dialect = "North Slope Coastal";
 
+
+//Related to goals
 global.setgoal = "None";
 global.pointgoal = 40;
 global.deckgoal = 1;
 
+//Replace the above with previous settings
+load_setting();
 
 //Sets the words used on the cards based off of the dialect
 global.numnamearr = array_create(21,[]);
@@ -146,5 +155,25 @@ function dialect_set(_dia = "North Slope Coastal"){
 	global.numnamearr[18] = [global.numnamearr[15][0],global.numnamearr[3][0]];
 	global.numnamearr[19] = [["i","ñuiñ","ña","ġu","tai","ḷaq"]];
 	global.numnamearr[20] = [["i","ñuiñ","ñaq"]];
+	
+}
+
+function mode_change(_goal){
+	
+	
+	if _goal == 5{
+		global.gamegoal = 5
+		global.gamemode = "Tallimaliuqta!"
+	}
+	
+	else if _goal == 10{
+		global.gamegoal = 10
+		global.gamemode = "Quliliuqta!"
+	}
+	
+	else if _goal == 20{
+		global.gamegoal = 20
+		global.gamemode = "Iñuiññaliuqta!"	
+	}
 	
 }
