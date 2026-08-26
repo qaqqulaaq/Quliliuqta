@@ -15,6 +15,7 @@ function check_card(_goal){
 
 	//If the card with the same value of the goal is available, an array that contains only that card is used.
 	else if _status[_goal-1] >= 1{
+		unselect_all();
 		var _returnarray = array_create(_goal - 1, 0)
 		array_push(_returnarray, 1);
 		comp_select(_returnarray);
@@ -79,6 +80,7 @@ function check_card(_goal){
 function comp_select(_array){
 	var _timeadj = 0;
 	
+	//the computer will select any zero cards
 	with obj_parcard if val == 0{
 		alarm[0] = 5 + _timeadj*game_get_speed(gamespeed_fps) div 2
 		_timeadj += 1;
